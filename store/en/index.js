@@ -20,8 +20,8 @@ export default {
         shortDesc: 'make a copy of an object',
         desc:
           'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
-        example: `const copy = Object.assign({}, obj)<br>
-        console.log(copy)`,
+        example: `const copy = Object.assign({}, obj);<br>
+        console.log(copy);`,
         output: `Object {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -40,9 +40,9 @@ export default {
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
         <span>&nbsp;&nbsp;</span>writable: true,<br>
         <span>&nbsp;&nbsp;</span>value: 4<br>
-        })<br>
+        });<br>
         <br>
-        console.log(obj.d)`,
+        console.log(obj.d);`,
         output: `4`
       },
       {
@@ -59,8 +59,9 @@ export default {
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 5,<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>writable: true<br>
         <span>&nbsp;&nbsp;</span>}<br>
-        })<br>
-        console.log(obj)`,
+        });<br>
+        <br>
+        console.log(obj);`,
         output: `{a: 1, b: 2, c: 3, d: 4, e: 5}`
       }
     ],
@@ -71,8 +72,8 @@ export default {
         desc: 'Determines if extending of an object is allowed.',
         example: `console.log(Object.isExtensible(obj))`,
         output: `true`,
-        example2: `Object.freeze(obj)<br>
-        console.log(Object.isExtensible(obj))`,
+        example2: `Object.freeze(obj);<br>
+        console.log(Object.isExtensible(obj));`,
         output2: `false`
       },
       {

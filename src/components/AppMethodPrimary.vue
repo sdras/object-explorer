@@ -41,6 +41,9 @@
     <div v-else-if="selectedFilter === options[5]">
       <method-choice :options="createString" methodType="return a"/>
     </div>
+    <div v-else-if="selectedFilter === options[6]">
+      <method-choice :options="prototype"/>
+    </div>
   </div>
 </template>
 
@@ -78,7 +81,8 @@ export default {
       'infoObj',
       'infoProp',
       'noChange',
-      'createString'
+      'createString',
+      'prototype'
     ]),
     options: function() {
       return this.$t('primaryOptions')

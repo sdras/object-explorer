@@ -18,7 +18,8 @@ export default {
     'get information about an object',
     'get information about properties',
     'restrict changes to an object',
-    'create a string from an object'
+    'create a string from an object',
+    'manage prototypes'
   ]
   // other text can be added here
 }
