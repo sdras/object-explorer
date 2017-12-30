@@ -8,15 +8,15 @@
       </option>
     </select>
     <div v-if="selectedFilter === options[0]">
-      <method-choice :options="adding" methodType="add"/>
+      <method-choice :options="createObj"/>
     </div>
     <div v-else-if="selectedFilter === options[1]">
-      <method-choice :options="removing" methodType="remove"/>
-    </div>
-    <div v-else-if="selectedFilter === options[3]">
-      <method-choice :options="iterate" methodType="iterate by"/>
+      <method-choice :options="createProp" methodType="create"/>
     </div>
     <div v-else-if="selectedFilter === options[2]">
+      <method-choice :options="infoObj"/>
+    </div>
+    <!-- <div v-else-if="selectedFilter === options[2]">
 
       <p>
         <label for="findmethod">{{$t('findMethod', "I'm trying to find")}}</label>
@@ -35,16 +35,7 @@
         <method-choice :options="find.many" methodType="find"/>
       </div>
 
-    </div>
-    <div v-else-if="selectedFilter === options[5]">
-      <method-choice :options="ordering"/>
-    </div>
-    <div v-else-if="selectedFilter === options[4]">
-      <method-choice :options="string"/>
-    </div>
-    <div v-else-if="selectedFilter === options[6]">
-      <method-choice :options="other"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -71,16 +62,6 @@ function mapLocalizedState(props) {
   return res
 }
 
-// const primaryOptionsDefault = [ // default fallback
-//   'add items or other arrays',
-//   'remove items',
-//   'find items',
-//   'walk over items',
-//   'return a string',
-//   'order an array',
-//   'something else'
-// ];
-
 export default {
   components: {
     MethodChoice
@@ -93,28 +74,14 @@ export default {
   },
   computed: {
     ...mapLocalizedState([
-      'adding', //: state => localizedState(state, 'adding'),
-      'removing',
-      'iterate',
-      'string',
-      'ordering',
-      'other',
-      'find'
+      'createObj', //: state => localizedState(state, 'adding'),
+      'createProp',
+      'infoObj'
     ]),
     options: function() {
       return this.$t('primaryOptions')
     }
   },
-  /*...mapState([
-      'adding',
-      'removing',
-      'iterate',
-      'string',
-      'ordering',
-      'other',
-      'find'
-    ].map(prop => `${store.getters.curLanguage}.${prop}`))*/
-  // },
   watch: {
     selectedFilter() {
       this.$store.commit('resetSelection')

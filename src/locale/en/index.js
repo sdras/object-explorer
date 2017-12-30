@@ -1,24 +1,20 @@
 export default {
   firstMethod: 'I have an object, I would like to',
-  findMethod: "I'm trying to find",
-  methodOptions: 'I need to',
+  // findMethod: "I'm trying to find",
+  // methodOptions: 'I need to',
   methodTypes: {
-    add: 'add',
-    remove: 'remove',
-    find: 'find',
-    'iterate by': 'iterate by',
-    string: 'string'
+    create: 'create',
+    remove: 'remove'
+    // find: 'find',
+    // 'iterate by': 'iterate by',
+    // string: 'string'
   },
-  singleItem: 'one item',
-  manyItems: 'one or many items',
+  // singleItem: 'one item',
+  // manyItems: 'one or many items',
   primaryOptions: [
-    'add items or other arrays',
-    'remove items',
-    'find items',
-    'walk over items',
-    'return a string',
-    'order an array',
-    'something else'
+    'create an object',
+    'create object properties',
+    'get information about an object'
   ]
   // other text can be added here
 }
