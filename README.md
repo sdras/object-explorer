@@ -12,7 +12,7 @@ I based most of the examples and longer descriptions off of the MDN documentatio
 
 **Enjoy!**
 
-##Other similar projects
+## Other Similar Projects
 
 I have an Array Explorer as well: [https://sdras.github.io/array-explorer/](https://sdras.github.io/array-explorer/)
 

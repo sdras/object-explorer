@@ -40,7 +40,6 @@
         <method-choice :options="find.many" methodType="find"/>
       </div>
 
-
     </div> -->
   </div>
 </template>
@@ -49,12 +48,6 @@
 import { store } from '../../store/index'
 import { mapState } from 'vuex'
 import MethodChoice from './methods/MethodChoice.vue'
-
-/*function localizedState({$store}, prop) {
-  const curLang = $store.state.curLanguage
-  console.log('state', curLang);
-  return $store.state[curLang][prop];
-}*/
 
 function mapLocalizedState(props) {
   let res = {}

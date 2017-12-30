@@ -71,9 +71,9 @@ export default {
         desc: 'Determines if extending of an object is allowed.',
         example: `console.log(Object.isExtensible(obj))`,
         output: `true`
-        // example2: `Object.freeze(obj)<br>
-        // console.log(Object.isExtensible(obj))`,
-        // output2: `false`
+        example2: `Object.freeze(obj)<br>
+        console.log(Object.isExtensible(obj))`,
+        output2: `false`
       },
       {
         name: 'is',
