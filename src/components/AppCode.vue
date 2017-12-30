@@ -6,8 +6,9 @@
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
         <span>&nbsp;&nbsp;</span>c: 3<br>
-        };</span><br>
-        <br>
+        };</span>
+      </p>
+      <p>
         <span v-if="selectedUsage"
           class="exampleoutput"
           ref="ex"
@@ -32,6 +33,7 @@
 
 <script>
 import { TweenLite, TimelineMax, Back, Power4 } from 'gsap'
+//import AppCodeSecondary from './AppCodeSecondary.vue'
 
 export default {
   methods: {

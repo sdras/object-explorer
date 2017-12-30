@@ -49,7 +49,7 @@ export default {
         name: 'defineProperties',
         shortDesc: 'one or more properties or modify existing properties',
         desc:
-          'Adds the named property described by a given descriptor to an object.',
+          'Adds one or more properties described by a given descriptor to an object.',
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -119,15 +119,13 @@ export default {
         name: 'isPrototypeOf',
         shortDesc: `if the object is in the prototype chain.`,
         desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
-        example: `function Bar() {}<br>
-        function Baz() {}<br>
+        example: `function Rect() {}<br>  
         <br>
-        Baz.prototype = Object.create(Bar);<br>
-        var baz = new Baz();<br>
+        var rect = new Rect();<br>
         <br>
-        console.log(Baz.prototype.isPrototypeOf(baz));`,
+        console.log(Rect.prototype.isPrototypeOf(rect));`,
         output: `true`,
-        newExample: true
+        useExample: 'newExample'
       }
     ],
     noChange: [
@@ -326,15 +324,12 @@ export default {
         name: 'isPrototypeOf',
         shortDesc: `find out if the object is in the prototype chain.`,
         desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
-        example: `function Bar() {}<br>
-        function Baz() {}<br>
+        example: `function Rect() {}<br>  
         <br>
-        Baz.prototype = Object.create(Bar);<br>
-        var baz = new Baz();<br>
+        var rect = new Rect();<br>
         <br>
-        console.log(Baz.prototype.isPrototypeOf(baz));`,
-        output: `true`,
-        newExample: true
+        console.log(Rect.prototype.isPrototypeOf(rect));`,
+        output: `true`
       }
     ]
   }

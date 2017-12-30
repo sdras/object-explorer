@@ -42,7 +42,7 @@
       <method-choice :options="createString" methodType="return a"/>
     </div>
     <div v-else-if="selectedFilter === options[6]">
-      <method-choice :options="prototype"/>
+      <method-choice :options="prototype" />
     </div>
   </div>
 </template>

@@ -13,10 +13,12 @@
         <app-code />
       </section>
     </main>
+    <app-object-anatomy />
   </div>
 </template>
 
 <script>
+import AppObjectAnatomy from './components/AppObjectAnatomy'
 import AppMethodPrimary from './components/AppMethodPrimary'
 import AppGithubCorner from './components/AppGithubCorner'
 import LocaleSwitcher from './components/LocaleSwitcher'
@@ -24,6 +26,7 @@ import AppCode from './components/AppCode'
 
 export default {
   components: {
+    AppObjectAnatomy,
     AppMethodPrimary,
     AppGithubCorner,
     LocaleSwitcher,

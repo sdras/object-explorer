@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .localization-dropdown {
-  float: right;
-  margin-right: 5%;
+  position: absolute;
+  right: 8%;
 }
 </style>
