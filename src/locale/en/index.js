@@ -12,7 +12,7 @@ export default {
   // manyItems: 'one or many items',
   primaryOptions: [
     'create an object',
-    'create object properties',
+    'create properties',
     'get information about an object',
     'restrict changes to an object',
     'create a string from an object'

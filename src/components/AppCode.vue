@@ -16,7 +16,7 @@
       </p>
     </div>
     <div v-if="selectedUsage" class="usage2">
-      <h3 style="margin-top: 50px">Output</h3>
+      <h3 class="usage-title">Output</h3>
       <div class="usage-code">
         <p>
           <span
@@ -140,6 +140,10 @@ export default {
   line-height: 1.5em;
   font-family: monospace;
   font-size: 17px;
+}
+
+.usage-title {
+  margin-top: 50px;
 }
 
 .usage1 {

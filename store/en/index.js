@@ -70,7 +70,7 @@ export default {
         shortDesc: 'if more properties can be added',
         desc: 'Determines if extending of an object is allowed.',
         example: `console.log(Object.isExtensible(obj))`,
-        output: `true`
+        output: `true`,
         example2: `Object.freeze(obj)<br>
         console.log(Object.isExtensible(obj))`,
         output2: `false`
@@ -192,23 +192,105 @@ export default {
         output: `Fri Dec 29 2017 20:57:35 GMT-0700 (MST)<br>
         12/29/2017, 8:57:35 PM`
       }
-    ]
-    // infoProp: [
-    //   {
-    //     name: 'propertyIsEnumerable',
-    //     shortDesc: `determine if a property can be traversed with a for...in loop`,
-    //     desc:
-    //       'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set.',
-    //     example: `function Bar() {};<br>
-    //     function Baz() {};<br>
-    //     <br>
-    //     Baz.prototype = Object.create(Bar);<br>
-    //     var baz = new Baz();<br>
-    //     <br>
-    //     console.log(Baz.prototype.isPrototypeOf(baz));`,
-    //     output: `true`,
-    //     newExample: true
-    //   }
-    // ]
+    ],
+    infoProp: {
+      details: [
+        {
+          name: 'getOwnPropertyDescriptor',
+          shortDesc: `find out details about a property`,
+          desc:
+            'Returns a property descriptor for a named property on an object.',
+          example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
+          <br>
+          console.log(o);`,
+          output: `Object {<br>
+          <span>&nbsp;&nbsp;</span>configurable: true,<br>
+          <span>&nbsp;&nbsp;</span>enumerable: true,<br>
+          <span>&nbsp;&nbsp;</span>value: 1,<br>
+          <span>&nbsp;&nbsp;</span>writable: true<br>
+          }`
+        },
+        {
+          name: 'getOwnPropertyDescriptors',
+          shortDesc: `find out details about all the properties on an object`,
+          desc:
+            'Returns an object containing all own property descriptors for an object.',
+          example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
+          output: `Object {
+          <span>&nbsp;&nbsp;</span>a: Object {
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 1,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
+          <span>&nbsp;&nbsp;</span>},
+          <span>&nbsp;&nbsp;</span>b: Object {
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 2,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
+          <span>&nbsp;&nbsp;</span>},
+          <span>&nbsp;&nbsp;</span>c: Object {
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 3,
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
+          <span>&nbsp;&nbsp;</span>},
+          }`
+        }
+      ],
+      list: [
+        {
+          name: 'keys',
+          shortDesc: `get an array of all of the keys`,
+          desc: `Returns an array containing the names of all of of the object's keys that can be looped through, in the order that they would be looped through.`,
+          example: `console.log(Object.keys(obj));`,
+          output: `["a", "b", "c"]`
+        },
+        {
+          name: 'values',
+          shortDesc: `get an array of all of the values`,
+          desc: `Returns an array containing the names of all of of the object's values that can be looped through, in the order that they would be looped through.`,
+          example: `console.log(Object.values(obj));`,
+          output: `[1, 2, 3]`
+        },
+        {
+          name: 'entries',
+          shortDesc: `get an array of all of the keys and values, each in their own array`,
+          desc: `Returns a nested array containing the names of all of of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
+          example: `console.log(Object.entries(obj));`,
+          output: `[["a", 1], ["b", 2], ["c", 3]]`
+        },
+        {
+          name: 'getOwnPropertyNames',
+          shortDesc: `get an array of all of the keys and values, each in their own array`,
+          desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as <code>Object.keys()</code>, retrieving the keys in the object, but <code>getOwnPropertyNames()</code> will include properties that can't be looped through.`,
+          example: `Object.defineProperty(obj, 'a', {<br>
+          <span>&nbsp;&nbsp;</span>enumerable: false<br>
+          });<br>
+          <br>
+          console.log(Object.keys(obj));<br>
+          console.log(Object.getOwnPropertyNames(obj));`,
+          output: `["b", "c"]<br>
+          ["a", "b", "c"]`
+        }
+      ],
+      other: [
+        {
+          name: 'propertyIsEnumerable',
+          shortDesc: `determine if a property can be traversed with a for...in loop`,
+          desc:
+            'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set.',
+          example: `function Bar() {};<br>
+          function Baz() {};<br>
+          <br>
+          Baz.prototype = Object.create(Bar);<br>
+          var baz = new Baz();<br>
+          <br>
+          console.log(Baz.prototype.isPrototypeOf(baz));`,
+          output: `true`,
+          newExample: true
+        }
+      ]
+    }
   }
 }
