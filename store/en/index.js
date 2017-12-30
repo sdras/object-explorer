@@ -67,14 +67,82 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: 'determine if more properties can be added',
+        shortDesc: 'if more properties can be added',
         desc: 'Determines if extending of an object is allowed.',
         example: `console.log(Object.isExtensible(obj))`,
         output: `true`
         // example2: `Object.freeze(obj)<br>
         // console.log(Object.isExtensible(obj))`,
         // output2: `false`
+      },
+      {
+        name: 'is',
+        shortDesc: 'if two objects are exactly the same',
+        desc:
+          'Compares if two values are the same value. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison).',
+        example: `let obj2 = {<br>
+        <span>&nbsp;&nbsp;</span>a: 1,<br>
+        <span>&nbsp;&nbsp;</span>b: 2,<br>
+        <span>&nbsp;&nbsp;</span>c: 3<br>
+        };<br>
+        <br>
+        console.log(Object.is(obj, obj2));<br>
+        console.log(Object.is(obj, obj));`,
+        output: `false<br>
+        true`
+      },
+      {
+        name: 'isFrozen',
+        shortDesc: `if an object and it's properties can't be modified`,
+        desc: 'Determines if an object is frozen.',
+        example: `console.log(Object.isFrozen(obj));`,
+        output: `false`,
+        example2: `Object.freeze(obj);<br>
+        console.log(Object.isFrozen(obj));`,
+        output2: `true`
+      },
+      {
+        name: 'isSealed',
+        shortDesc: `if an object can't be modified (its properties can be, though)`,
+        desc: 'Determines if an object is sealed.',
+        example: `console.log(Object.isSealed(obj));`,
+        output: `false`,
+        example2: `Object.seal(obj);<br>
+        console.log(Object.isSealed(obj));`,
+        output2: `true`
+      },
+      {
+        name: 'isPrototypeOf',
+        shortDesc: `if an object //more`,
+        desc:
+          'Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.',
+        example: `function Bar() {};<br>
+        function Baz() {};<br>
+        <br>
+        Baz.prototype = Object.create(Bar);<br>
+        var baz = new Baz();<br>
+        <br>
+        console.log(Baz.prototype.isPrototypeOf(baz));`,
+        output: `true`,
+        newExample: true
       }
     ]
+    // infoProp: [
+    //   {
+    //     name: 'propertyIsEnumerable',
+    //     shortDesc: `determine if a property can be traversed with a for...in loop`,
+    //     desc:
+    //       'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set.',
+    //     example: `function Bar() {};<br>
+    //     function Baz() {};<br>
+    //     <br>
+    //     Baz.prototype = Object.create(Bar);<br>
+    //     var baz = new Baz();<br>
+    //     <br>
+    //     console.log(Baz.prototype.isPrototypeOf(baz));`,
+    //     output: `true`,
+    //     newExample: true
+    //   }
+    // ]
   }
 }

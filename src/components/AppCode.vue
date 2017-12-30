@@ -7,6 +7,7 @@
         <span>&nbsp;&nbsp;</span>b: 2,<br>
         <span>&nbsp;&nbsp;</span>c: 3<br>
         };</span><br>
+        <br>
         <span v-if="selectedUsage"
           class="exampleoutput"
           ref="ex"

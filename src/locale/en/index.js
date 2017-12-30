@@ -4,8 +4,7 @@ export default {
   // methodOptions: 'I need to',
   methodTypes: {
     create: 'create',
-    remove: 'remove'
-    // find: 'find',
+    determine: 'determine'
     // 'iterate by': 'iterate by',
     // string: 'string'
   },

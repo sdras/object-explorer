@@ -11,10 +11,10 @@
       <method-choice :options="createObj"/>
     </div>
     <div v-else-if="selectedFilter === options[1]">
-      <method-choice :options="createProp" methodType="create"/>
+      <method-choice :options="createProp" methodType="create" />
     </div>
     <div v-else-if="selectedFilter === options[2]">
-      <method-choice :options="infoObj"/>
+      <method-choice :options="infoObj" methodType="determine" />
     </div>
     <!-- <div v-else-if="selectedFilter === options[2]">
 
