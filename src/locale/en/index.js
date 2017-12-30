@@ -1,7 +1,7 @@
 export default {
   firstMethod: 'I have an object, I would like to',
   // findMethod: "I'm trying to find",
-  // methodOptions: 'I need to',
+  methodOptions: 'I need to',
   methodTypes: {
     create: 'create',
     determine: 'determine'
@@ -13,7 +13,8 @@ export default {
   primaryOptions: [
     'create an object',
     'create object properties',
-    'get information about an object'
+    'get information about an object',
+    'restrict changes to an object'
   ]
   // other text can be added here
 }

@@ -16,6 +16,9 @@
     <div v-else-if="selectedFilter === options[2]">
       <method-choice :options="infoObj" methodType="determine" />
     </div>
+    <div v-else-if="selectedFilter === options[3]">
+      <method-choice :options="noChange" />
+    </div>
     <!-- <div v-else-if="selectedFilter === options[2]">
 
       <p>
@@ -30,10 +33,10 @@
       <div v-if="selectedFind === 'single'">
         <method-choice :options="find.single" methodType="find"/>
       </div>
-
       <div v-else-if="selectedFind === 'many'">
         <method-choice :options="find.many" methodType="find"/>
       </div>
+
 
     </div> -->
   </div>
@@ -76,7 +79,8 @@ export default {
     ...mapLocalizedState([
       'createObj', //: state => localizedState(state, 'adding'),
       'createProp',
-      'infoObj'
+      'infoObj',
+      'noChange'
     ]),
     options: function() {
       return this.$t('primaryOptions')

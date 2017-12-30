@@ -105,11 +105,14 @@ export default {
         name: 'isSealed',
         shortDesc: `if an object can't be modified (its properties can be, though)`,
         desc: 'Determines if an object is sealed.',
-        example: `console.log(Object.isSealed(obj));`,
-        output: `false`,
-        example2: `Object.seal(obj);<br>
-        console.log(Object.isSealed(obj));`,
-        output2: `true`
+        example: `Object.defineProperty(obj, 'a', {<br>
+        <span>&nbsp;&nbsp;</span>configurable: false<br>
+        })<br>
+        <br>
+        console.log(Object.isSealed(obj));<br>
+        console.log(Object.isSealed(obj.a));`,
+        output: `false<br>
+        true`
       },
       {
         name: 'isPrototypeOf',
@@ -125,6 +128,27 @@ export default {
         console.log(Baz.prototype.isPrototypeOf(baz));`,
         output: `true`,
         newExample: true
+      }
+    ],
+    noChange: [
+      {
+        name: 'seal',
+        shortDesc: `make sure properties can't be added or deleted`,
+        desc:
+          'Prevents other code from deleting properties of an object. Existing properties can still be modified.',
+        example: `delete obj.c;<br>
+        console.log(obj);`,
+        output: `Object {<br>
+        <span>&nbsp;&nbsp;</span>a: 1,<br>
+        <span>&nbsp;&nbsp;</span>b: 2<br>
+        }`,
+        example2: `Object.seal(obj);<br>
+        delete obj.b;<br>
+        console.log(obj);`,
+        output2: `Object {
+        <span>&nbsp;&nbsp;</span>a: 1,
+        <span>&nbsp;&nbsp;</span>b: 2
+        }`
       }
     ]
     // infoProp: [
