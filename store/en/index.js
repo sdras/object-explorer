@@ -197,7 +197,7 @@ export default {
       details: [
         {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `find out details about a property`,
+          shortDesc: `details about a property`,
           desc:
             'Returns a property descriptor for a named property on an object.',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
@@ -212,7 +212,7 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `find out details about all the properties on an object`,
+          shortDesc: `details about all the properties on an object`,
           desc:
             'Returns an object containing all own property descriptors for an object.',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
@@ -236,33 +236,58 @@ export default {
           <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
           <span>&nbsp;&nbsp;</span>},
           }`
+        },
+        {
+          name: 'propertyIsEnumerable',
+          shortDesc: `if a property can be traversed with a for...in loop`,
+          desc:
+            'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set. This can be used to see if something is a built-in or user-defined method because built-in properties tend to not be enumerable',
+          example: `console.log(obj.propertyIsEnumerable('a'));
+          console.log(Math.propertyIsEnumerable('random'));`,
+          output: `true<br>
+          false`
+        },
+        {
+          name: 'hasOwnProperty',
+          shortDesc: `if a property exists as a direct property of the object`,
+          desc:
+            'Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.',
+          example: `console.log(obj.hasOwnProperty('a'));`,
+          output: `true`,
+          example2: `function changeO() {<br>
+          <span>&nbsp;&nbsp;</span>delete obj.a;<br>
+          }<br>
+          <br>
+          changeO();<br>
+          console.log(obj.hasOwnProperty('a'));`,
+          output2: `false`
         }
       ],
       list: [
         {
           name: 'keys',
-          shortDesc: `get an array of all of the keys`,
+          shortDesc: `keys`,
           desc: `Returns an array containing the names of all of of the object's keys that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `get an array of all of the values`,
+          shortDesc: `values`,
           desc: `Returns an array containing the names of all of of the object's values that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `get an array of all of the keys and values, each in their own array`,
+          shortDesc: `keys and values`,
           desc: `Returns a nested array containing the names of all of of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `get an array of all of the keys and values, each in their own array`,
+          shortDesc: `keys, even if you can't loop through them`,
           desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as <code>Object.keys()</code>, retrieving the keys in the object, but <code>getOwnPropertyNames()</code> will include properties that can't be looped through.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
@@ -272,23 +297,6 @@ export default {
           console.log(Object.getOwnPropertyNames(obj));`,
           output: `["b", "c"]<br>
           ["a", "b", "c"]`
-        }
-      ],
-      other: [
-        {
-          name: 'propertyIsEnumerable',
-          shortDesc: `determine if a property can be traversed with a for...in loop`,
-          desc:
-            'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set.',
-          example: `function Bar() {};<br>
-          function Baz() {};<br>
-          <br>
-          Baz.prototype = Object.create(Bar);<br>
-          var baz = new Baz();<br>
-          <br>
-          console.log(Baz.prototype.isPrototypeOf(baz));`,
-          output: `true`,
-          newExample: true
         }
       ]
     }

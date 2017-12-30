@@ -17,30 +17,30 @@
       <method-choice :options="infoObj" methodType="determine" />
     </div>
     <div v-else-if="selectedFilter === options[3]">
-      <method-choice :options="noChange"/>
-    </div>
-    <div v-else-if="selectedFilter === options[4]">
-      <method-choice :options="createString" methodType="return a"/>
-    </div>
-    <!-- <div v-else-if="selectedFilter === options[2]">
 
       <p>
-        <label for="findmethod">{{$t('findMethod', "I'm trying to find")}}</label>
-        <select id="findMethod" name="select" v-model="selectedFind">
+        <label for="infoProperty">{{$t('infoPropMethod', "I need to get")}}</label>
+        <select id="infoProperty" name="select" v-model="selectInfoProperty">
           <option value="" disabled selected>...</option>
-          <option value="single">{{$t('singleItem', 'one item')}}</option>
-          <option value="many">{{$t('manyItems', 'one or many items')}}</option>
+          <option value="details">{{$t('details', 'details about the property')}}</option>
+          <option value="list">{{$t('list', 'a list of all of the keys and/or values')}}</option>
         </select>
       </p>
 
-      <div v-if="selectedFind === 'single'">
-        <method-choice :options="find.single" methodType="find"/>
+      <div v-if="selectInfoProperty === 'details'">
+        <method-choice :options="infoProp.details" methodType="find out"/>
       </div>
-      <div v-else-if="selectedFind === 'many'">
-        <method-choice :options="find.many" methodType="find"/>
+      <div v-else-if="selectInfoProperty === 'list'">
+        <method-choice :options="infoProp.list" methodType="get an array of all of the"/>
       </div>
 
-    </div> -->
+    </div><!--options3- infoProperties-->
+    <div v-else-if="selectedFilter === options[4]">
+      <method-choice :options="noChange"/>
+    </div>
+    <div v-else-if="selectedFilter === options[5]">
+      <method-choice :options="createString" methodType="return a"/>
+    </div>
   </div>
 </template>
 
@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       selectedFilter: '',
-      selectedFind: ''
+      selectInfoProperty: ''
     }
   },
   computed: {
@@ -76,6 +76,7 @@ export default {
       'createObj', //: state => localizedState(state, 'adding'),
       'createProp',
       'infoObj',
+      'infoProp',
       'noChange',
       'createString'
     ]),
@@ -87,7 +88,7 @@ export default {
     selectedFilter() {
       this.$store.commit('resetSelection')
     },
-    selectedFind() {
+    selectInfoProperty() {
       this.$store.commit('resetSelection')
     }
   }
