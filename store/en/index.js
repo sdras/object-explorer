@@ -149,6 +149,48 @@ export default {
         <span>&nbsp;&nbsp;</span>a: 1,
         <span>&nbsp;&nbsp;</span>b: 2
         }`
+      },
+      {
+        name: 'freeze',
+        shortDesc: `make sure properties can't be added, deleted, or modified`,
+        desc: `Freezes an object: other code can't delete or change any properties.`,
+        example: `Object.freeze(obj);<br>
+        obj.a = 10;<br>
+        <br>
+        console.log(obj.a);`,
+        output: `1 <span class="comment">//the value didn't update to 10</span>`
+      },
+      {
+        name: 'preventExtensions',
+        shortDesc: `make sure properties can't be added.`,
+        desc: `Prevents any extensions of an object. I can still delete properties but can't add any new ones.`,
+        example: `Object.preventExtensions(obj);<br>
+        obj.d = 4;<br>
+        <br>
+        console.log(obj.d);`,
+        output: `undefined`
+      }
+    ],
+    createString: [
+      {
+        name: 'toString',
+        shortDesc: `string representation of the object.`,
+        desc: `The <code>toString()</code> method returns a string representing the object.`,
+        example: `console.log(obj.toString());<br>
+        console.log(obj.a.toString());`,
+        output: `"[object Object]"<br>
+        "1"`
+      },
+      {
+        name: 'toLocaleString',
+        shortDesc: `localized string representation of the object.`,
+        desc: `The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has differnt data based on location, such as date methods, it will give you a different time format`,
+        example: `obj.d = new Date();<br>
+        <br>
+        console.log(obj.d);<br>
+        console.log(obj.d.toLocaleString());`,
+        output: `Fri Dec 29 2017 20:57:35 GMT-0700 (MST)<br>
+        12/29/2017, 8:57:35 PM`
       }
     ]
     // infoProp: [

@@ -4,8 +4,8 @@ export default {
   methodOptions: 'I need to',
   methodTypes: {
     create: 'create',
-    determine: 'determine'
-    // 'iterate by': 'iterate by',
+    determine: 'determine',
+    'return a': 'return a'
     // string: 'string'
   },
   // singleItem: 'one item',
@@ -14,7 +14,8 @@ export default {
     'create an object',
     'create object properties',
     'get information about an object',
-    'restrict changes to an object'
+    'restrict changes to an object',
+    'create a string from an object'
   ]
   // other text can be added here
 }

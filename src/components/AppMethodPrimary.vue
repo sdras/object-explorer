@@ -17,7 +17,10 @@
       <method-choice :options="infoObj" methodType="determine" />
     </div>
     <div v-else-if="selectedFilter === options[3]">
-      <method-choice :options="noChange" />
+      <method-choice :options="noChange"/>
+    </div>
+    <div v-else-if="selectedFilter === options[4]">
+      <method-choice :options="createString" methodType="return a"/>
     </div>
     <!-- <div v-else-if="selectedFilter === options[2]">
 
@@ -80,7 +83,8 @@ export default {
       'createObj', //: state => localizedState(state, 'adding'),
       'createProp',
       'infoObj',
-      'noChange'
+      'noChange',
+      'createString'
     ]),
     options: function() {
       return this.$t('primaryOptions')
