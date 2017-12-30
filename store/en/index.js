@@ -4,7 +4,7 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'create a new array',
+        shortDesc: 'create a new object',
         desc:
           'Creates a new object with the specified prototype object and properties.',
         example: `const obj2 = Object.create(obj);<br>
@@ -17,7 +17,7 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'make a copy of an array',
+        shortDesc: 'make a copy of an object',
         desc:
           'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
         example: `const copy = Object.assign({}, obj)<br>
@@ -104,7 +104,7 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `if an object can't be modified (its properties can be, though)`,
-        desc: 'Determines if an object is sealed.',
+        desc: 'Determines if an object or its properties are sealed.',
         example: `Object.defineProperty(obj, 'a', {<br>
         <span>&nbsp;&nbsp;</span>configurable: false<br>
         })<br>
@@ -116,11 +116,10 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `if an object //more`,
-        desc:
-          'Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.',
-        example: `function Bar() {};<br>
-        function Baz() {};<br>
+        shortDesc: `if the object is in the prototype chain.`,
+        desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
+        example: `function Bar() {}<br>
+        function Baz() {}<br>
         <br>
         Baz.prototype = Object.create(Bar);<br>
         var baz = new Baz();<br>
@@ -216,25 +215,25 @@ export default {
           desc:
             'Returns an object containing all own property descriptors for an object.',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
-          output: `Object {
-          <span>&nbsp;&nbsp;</span>a: Object {
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 1,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
-          <span>&nbsp;&nbsp;</span>},
-          <span>&nbsp;&nbsp;</span>b: Object {
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 2,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
-          <span>&nbsp;&nbsp;</span>},
-          <span>&nbsp;&nbsp;</span>c: Object {
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 3,
-          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true
-          <span>&nbsp;&nbsp;</span>},
+          output: `Object {<br>
+          <span>&nbsp;&nbsp;</span>a: Object {<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 1,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true<br>
+          <span>&nbsp;&nbsp;</span>},<br>
+          <span>&nbsp;&nbsp;</span>b: Object {<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 2,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true<br>
+          <span>&nbsp;&nbsp;</span>},<br>
+          <span>&nbsp;&nbsp;</span>c: Object {<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>configurable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>enumerable: true,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>value: 3,<br>
+          <span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span>writable: true<br>
+          <span>&nbsp;&nbsp;</span>},<br>
           }`
         },
         {
@@ -299,6 +298,43 @@ export default {
           ["a", "b", "c"]`
         }
       ]
-    }
+    },
+    prototype: [
+      {
+        name: 'getPrototypeOf',
+        shortDesc: `get a prototype of the object.`,
+        desc: `Returns the prototype of the specified object. (i.e. the value of the internal [[Prototype]] property) of the specified object).`,
+        example: `const proto = Object.create(obj);<br>
+        console.log(Object.getPrototypeOf(proto) === obj);`,
+        output: `true`
+      },
+      {
+        name: 'setPrototypeOf',
+        shortDesc: `set a prototype of the object.`,
+        desc: `Warning: this method is really slow. Use with caution, or replace with <code>Object.create()</code>. Sets the prototype (i.e., the internal [[Prototype]] property).`,
+        example: `const dict = Object.setPrototypeOf({}, obj);<br>
+        <br>
+        console.log(dict);`,
+        output: `Object {<br>
+        <span>&nbsp;&nbsp;</span>a: 1,<br>
+        <span>&nbsp;&nbsp;</span>b: 2,<br>
+        <span>&nbsp;&nbsp;</span>c: 3<br>
+        }`
+      },
+      {
+        name: 'isPrototypeOf',
+        shortDesc: `find out if the object is in the prototype chain.`,
+        desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
+        example: `function Bar() {}<br>
+        function Baz() {}<br>
+        <br>
+        Baz.prototype = Object.create(Bar);<br>
+        var baz = new Baz();<br>
+        <br>
+        console.log(Baz.prototype.isPrototypeOf(baz));`,
+        output: `true`,
+        newExample: true
+      }
+    ]
   }
 }
