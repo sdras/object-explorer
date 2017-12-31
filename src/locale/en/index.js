@@ -1,5 +1,6 @@
 export default {
-  firstMethod: 'I have an object, I would like to',
+  datatype: 'I have an',
+  firstMethod: 'I would like to',
   infoPropMethod: 'I need to get',
   methodOptions: 'I need to',
   methodTypes: {

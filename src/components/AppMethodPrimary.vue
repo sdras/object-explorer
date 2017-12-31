@@ -1,6 +1,11 @@
 <template>
   <div>
-    <label for="firstmethod">{{$t('firstMethod', 'I have an object, I would like to')}}</label>
+    <label for="datatype">{{$t('datatype', 'I have an')}}</label>
+    <select name="select" v-model="sDatatype">
+      <option value="object" selected>object</option>
+      <option value="array">array</option>
+    </select>
+    <label for="firstmethod">{{$t('firstMethod', 'I would like to')}}</label>
     <select id="firstmethod" name="select" v-model="selectedFilter">
       <option value="" disabled selected>...</option>
       <option v-for="option in options" :key="option.name" :value="option">
@@ -70,6 +75,7 @@ export default {
   },
   data() {
     return {
+      sDatatype: 'object',
       selectedFilter: '',
       selectInfoProperty: ''
     }
@@ -94,6 +100,12 @@ export default {
     },
     selectInfoProperty() {
       this.$store.commit('resetSelection')
+    },
+    sDatatype() {
+      if (this.sDatatype === 'array') {
+        window.document.location.href =
+          'https://sdras.github.io/array-explorer/'
+      }
     }
   }
 }
