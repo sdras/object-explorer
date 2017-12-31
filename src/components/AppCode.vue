@@ -33,7 +33,6 @@
 
 <script>
 import { TweenLite, TimelineMax, Back, Power4 } from 'gsap'
-//import AppCodeSecondary from './AppCodeSecondary.vue'
 
 export default {
   methods: {

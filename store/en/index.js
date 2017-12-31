@@ -72,11 +72,11 @@ export default {
         name: 'isExtensible',
         shortDesc: 'if more properties can be added',
         desc: 'Determines if extending of an object is allowed.',
-        example: `console.log(Object.isExtensible(obj))`,
-        output: `true`,
-        example2: `Object.freeze(obj);<br>
+        example: `console.log(Object.isExtensible(obj));<br>
+        Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
-        output2: `false`
+        output: `true<br>
+        false`
       },
       {
         name: 'is',
@@ -98,11 +98,11 @@ export default {
         name: 'isFrozen',
         shortDesc: `if an object and it's properties can't be modified`,
         desc: 'Determines if an object is frozen.',
-        example: `console.log(Object.isFrozen(obj));`,
-        output: `false`,
-        example2: `Object.freeze(obj);<br>
+        example: `console.log(Object.isFrozen(obj));<br>
+        Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
-        output2: `true`
+        output: `false<br>
+        true`
       },
       {
         name: 'isSealed',
@@ -136,19 +136,11 @@ export default {
         shortDesc: `make sure properties can't be added or deleted`,
         desc:
           'Prevents other code from deleting properties of an object. Existing properties can still be modified.',
-        example: `delete obj.c;<br>
+        example: `Object.seal(obj);<br>
+        delete obj.c;<br>
+        <br>
         console.log(obj);`,
-        output: `Object {<br>
-        <span>&nbsp;&nbsp;</span>a: 1,<br>
-        <span>&nbsp;&nbsp;</span>b: 2<br>
-        }`,
-        example2: `Object.seal(obj);<br>
-        delete obj.b;<br>
-        console.log(obj);`,
-        output2: `Object {
-        <span>&nbsp;&nbsp;</span>a: 1,
-        <span>&nbsp;&nbsp;</span>b: 2
-        }`
+        output: `{a: 1, b: 2, c: 3} // obj.c doesn't get deleted`
       },
       {
         name: 'freeze',
@@ -242,7 +234,7 @@ export default {
           shortDesc: `if a property can be traversed with a for...in loop`,
           desc:
             'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set. This can be used to see if something is a built-in or user-defined method because built-in properties tend to not be enumerable',
-          example: `console.log(obj.propertyIsEnumerable('a'));
+          example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
           false`
@@ -252,15 +244,11 @@ export default {
           shortDesc: `if a property exists as a direct property of the object`,
           desc:
             'Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.',
-          example: `console.log(obj.hasOwnProperty('a'));`,
-          output: `true`,
-          example2: `function changeO() {<br>
-          <span>&nbsp;&nbsp;</span>delete obj.a;<br>
-          }<br>
-          <br>
-          changeO();<br>
+          example: `console.log(obj.hasOwnProperty('a'));<br>
+          delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
-          output2: `false`
+          output: `true<br>
+          false`
         }
       ],
       list: [
