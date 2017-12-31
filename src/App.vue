@@ -99,7 +99,8 @@ html {
 }
 
 select,
-option {
+option,
+button {
   font-family: 'Gill Sans W04 Book', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -146,6 +147,7 @@ body {
 }
 
 main {
+  margin-top: 60px;
   width: 95%;
   display: grid;
   grid-gap: 40px;
