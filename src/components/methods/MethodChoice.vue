@@ -53,12 +53,11 @@ export default {
 }
 </script>
 
-<style scoped>
-code {
+<style>
+p.desc code {
   background: #eee;
-  padding: 3px 6px;
   font-size: 16px;
-  border-radius: 5px;
-  color: #666;
+  padding: 3px 8px;
+  border-radius: 3px;
 }
 </style>

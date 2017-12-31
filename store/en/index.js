@@ -33,8 +33,9 @@ export default {
       {
         name: 'defineProperty',
         shortDesc: 'a new property or modify an existing one',
-        desc:
-          'Adds the named property described by a given descriptor to an object.',
+        desc: `Adds the named property described by a given descriptor to an object.<br>
+          <br>
+          <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -48,8 +49,9 @@ export default {
       {
         name: 'defineProperties',
         shortDesc: 'one or more properties or modify existing properties',
-        desc:
-          'Adds one or more properties described by a given descriptor to an object.',
+        desc: `Adds one or more properties described by a given descriptor to an object.<br>
+          <br>
+          <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>

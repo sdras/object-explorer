@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-github-corner />
-    <LocaleSwitcher/>
+    <app-locale-switcher />
     <main>
       <section class="a">
         <h1>Object Explorer</h1>
@@ -18,18 +18,18 @@
 </template>
 
 <script>
+import AppLocaleSwitcher from './components/AppLocaleSwitcher'
 import AppObjectAnatomy from './components/AppObjectAnatomy'
 import AppMethodPrimary from './components/AppMethodPrimary'
 import AppGithubCorner from './components/AppGithubCorner'
-import LocaleSwitcher from './components/LocaleSwitcher'
 import AppCode from './components/AppCode'
 
 export default {
   components: {
+    AppLocaleSwitcher,
     AppObjectAnatomy,
     AppMethodPrimary,
     AppGithubCorner,
-    LocaleSwitcher,
     AppCode
   }
 }
