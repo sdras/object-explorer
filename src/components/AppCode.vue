@@ -1,7 +1,7 @@
 <template>
   <aside>
     <div class="usage-code usage1">
-      <p>
+      <p v-if="!selectedUsage || (selectedUsage && selectedUsage.name !== 'isPrototypeOf')">
         <span>let obj = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
