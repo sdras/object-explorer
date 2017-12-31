@@ -4,7 +4,7 @@ When I was first learning object methods, I spent a lot of time digging through 
 
 Check out the site here: [https://sdras.github.io/object-explorer/](https://sdras.github.io/object-explorer/)
 
-Or if you prefer codepen: [https://codepen.io/sdras/full/gogVRX/](https://codepen.io/sdras/full/gogVRX/)
+Or if you prefer codepen: []()
 
 I realize that there are about a million ways that this resource can be set up, and some of the taxonomy is necessarily opionionated. I tried to focus on what I thought would have helped me learn the best, rather than industry standard delineations. If that style of learning suits you better, that's great! This resource is not set up that way.
 
