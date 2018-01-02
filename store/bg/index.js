@@ -5,9 +5,9 @@ export default {
       {
         name: 'create',
         shortDesc: 'създам нов обект',
-        desc: `Creates a new object with the specified prototype object and properties.<br>
+        desc: `Създава нов обект със зададения прототип и свойства.<br>
           <br>
-          <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, by assigning it to a variable.`,
+          <strong>Важно за начинаещи!</strong> Създаването на обект по начина показан в началото на примера е по-често срещано - чрез присвояване към променлива.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,9 +18,9 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'make a copy of an object',
+        shortDesc: 'направя копие на обект',
         desc:
-          'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
+          'Копира стойностите на всички изброени свойства на един или повече обекти към друг обект. Връща новия обект като стойност.',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -33,10 +33,10 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: 'a new property or modify an existing one',
-        desc: `Adds the named property described by a given descriptor to an object.<br>
+        shortDesc: 'ново свойство или да променя съществуващо',
+        desc: `Добавя свойство с даденото име, определено с подадените параметри.<br>
           <br>
-          <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
+          <strong>Важно за начинаещи!</strong> По-чесно се използват точка или квадратни скоби, когато се създава ново свойство или се променя съществуващо такова. Например: <code>obj.a = 1</code> или <code>obj[a] = 1</code>. Технически, това не е вграден метод и затова не е включен.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -49,10 +49,10 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'one or more properties or modify existing properties',
-        desc: `Adds one or more properties described by a given descriptor to an object.<br>
+        shortDesc: 'едно или повече свойства или да променя съществуващи',
+        desc: `Добавя едно или повече свойства към обекта, определени от параметрите.<br>
           <br>
-          <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
+          <strong>Важно за начинаещи!</strong> По-чесно се използват точка или квадратни скоби, когато се създава ново свойство или се променя съществуващо такова. Например: <code>obj.a = 1</code> или <code>obj[a] = 1</code>. Технически, това не е вграден метод и затова не е включен.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -71,8 +71,8 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: 'if more properties can be added',
-        desc: 'Determines if extending of an object is allowed.',
+        shortDesc: 'дали повече свойства могат да бъдат добавени',
+        desc: 'Определя дали удължаването на обекта е разрешено.',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -81,9 +81,9 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'if two references point to the same object',
+        shortDesc: 'дали две референции водят към същия обект',
         desc:
-          'Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading.',
+          'Проверява дали две референции водят към същия обект. Приравнява всички NaN стойности (което се отличава от Abstract Equality Comparison и Strict Equality Comparison). Това е малко странно и MDN документите са малко подвеждащи.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -97,8 +97,8 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `if an object and it's properties can't be modified`,
-        desc: 'Determines if an object is frozen.',
+        shortDesc: `дали обектът и свойствата му не могат да бъдат променяни`,
+        desc: 'Проверява дали обектът е замръзен.',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -107,8 +107,8 @@ export default {
       },
       {
         name: 'isSealed',
-        shortDesc: `if an object can't be modified (its properties can be, though)`,
-        desc: 'Determines if an object or its properties are sealed.',
+        shortDesc: `дали обектът не може да бъде променян (свойствата могат)`,
+        desc: 'Определя дали обектът или свойствата му са запечатани.',
         example: `Object.defineProperty(obj, 'a', {<br>
         <span>&nbsp;&nbsp;</span>configurable: false<br>
         })<br>
@@ -120,8 +120,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `if the object is in the prototype chain.`,
-        desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
+        shortDesc: `дали обектът е в прототипната верига`,
+        desc: `Връща булева стойност за това дали обектът е в прототипната верига.`,
         example: `function Rect() {}<br>  
         <br>
         var rect = new Rect();<br>
