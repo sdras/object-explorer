@@ -57,6 +57,7 @@ function mapLocalizedState(props) {
   props.forEach(
     prop =>
       (res[prop] = state => {
+        console.log(state.$store.state)
         const { curLanguage } = state.$store.state
         return state.$store.state[curLanguage][prop]
       })

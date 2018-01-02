@@ -5,12 +5,14 @@ import vuexI18n from 'vuex-i18n'
 // import languages (only state translations)
 import en from './en/index'
 import nl from './nl/index'
+import PTpt from './pt-pt/index'
 
 // import translations of labels
 import translationsEn from '../src/locale/en/index'
 import translationsNl from '../src/locale/nl/index'
+import translationsPTpt from '../src/locale/pt-pt/index'
 
-// create info about langauges
+// create info about languages
 const languages = (ctx => {
   let keys = ctx.keys()
   let values = keys.map(ctx)
@@ -27,6 +29,8 @@ const languages = (ctx => {
   return res
 })(require.context('./', true, /[a-z]{2}/))
 
+console.log(languages)
+
 Vue.use(Vuex)
 
 const mutations = {
@@ -37,6 +41,7 @@ const mutations = {
     state.selectedMethod = ''
   },
   changeLanguage(state, newLang) {
+    console.log(newLang)
     state.curLanguage = newLang
     Vue.i18n.set(newLang)
   }
@@ -45,7 +50,8 @@ const mutations = {
 export const store = new Vuex.Store({
   modules: {
     en,
-    nl
+    nl,
+    'pt-pt': PTpt
   },
   state: {
     selectedMethod: undefined,
@@ -60,6 +66,7 @@ Vue.use(vuexI18n.plugin, store)
 // add translations directly to the application
 Vue.i18n.add('en', translationsEn)
 Vue.i18n.add('nl', translationsNl)
+Vue.i18n.add('pt-pt', translationsPTpt)
 
 Vue.i18n.set(store.state.curLanguage)
 
