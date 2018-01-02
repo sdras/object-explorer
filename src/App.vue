@@ -4,7 +4,7 @@
     <app-locale-switcher />
     <main>
       <section class="a">
-        <h1>Object Explorer</h1>
+        <h1>JavaScript Object Explorer</h1>
         <p class="subtitle"><em>Find the object method you need without digging through the docs</em></p>
         <app-method-primary />
       </section>

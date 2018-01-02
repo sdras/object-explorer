@@ -5,8 +5,9 @@ export default {
       {
         name: 'create',
         shortDesc: 'create a new object',
-        desc:
-          'Creates a new object with the specified prototype object and properties.',
+        desc: `Creates a new object with the specified prototype object and properties.<br>
+          <br>
+          <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, by assigning it to a variable.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
