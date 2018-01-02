@@ -49,7 +49,7 @@ export const store = new Vuex.Store({
   },
   state: {
     selectedMethod: undefined,
-    curLanguage: 'nl',
+    curLanguage: 'en',
     languages
   },
   mutations
