@@ -44,7 +44,8 @@ const mutations = {
 
 export const store = new Vuex.Store({
   modules: {
-    en
+    en,
+    cz
   },
   state: {
     selectedMethod: undefined,
