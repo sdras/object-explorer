@@ -1,25 +1,26 @@
 export default {
-  firstMethod: 'I have an object, I would like to',
-  infoPropMethod: 'I need to get',
-  methodOptions: 'I need to',
+  firstMethod: 'Ik heb een object, ik wil graag',
+  infoPropMethod: 'Ik heb nodig',
+  methodOptions: 'Ik moet',
   methodTypes: {
-    create: 'create',
-    determine: 'determine',
-    'return a': 'return a',
-    'find out': 'find out',
-    'get an array of all of the': 'get an array of all of the'
+    create: 'aanmaken',
+    determine: 'bepalen',
+    'return a': 'teruggeven',
+    'find out': 'er achter komen',
+    'get an array of all of the': 'een array krijgen van alle'
     // string: 'string'
   },
-  details: 'details about the property',
+  details: 'details over de property',
   list: 'a list of all of the keys and/or values',
+  list: 'een lijst van alle keys en/of waardes',
   primaryOptions: [
-    'create an object',
-    'create properties',
-    'get information about an object',
-    'get information about properties',
-    'restrict changes to an object',
-    'create a string from an object',
-    'manage prototypes'
+    'een object aanmaken',
+    'properties aanmaken',
+    'informatie krijgen over een object',
+    'informatie krijgen over properties',
+    'veranderingen aan een object beperken',
+    'van een object een string maken',
+    'prototypes beheren'
   ]
   // other text can be added here
 }

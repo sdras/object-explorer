@@ -4,7 +4,7 @@ import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
 import en from './en/index'
-import en from './nl/index'
+import nl from './nl/index'
 
 // import translations of labels
 import translationsEn from '../src/locale/en/index'
@@ -44,11 +44,12 @@ const mutations = {
 
 export const store = new Vuex.Store({
   modules: {
-    en
+    en,
+    nl
   },
   state: {
     selectedMethod: undefined,
-    curLanguage: 'en',
+    curLanguage: 'nl',
     languages
   },
   mutations
