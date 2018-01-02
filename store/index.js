@@ -4,9 +4,11 @@ import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
 import en from './en/index'
+import cz from './cz/index'
 
 // import translations of labels
 import translationsEn from '../src/locale/en/index'
+import translationsCz from '../src/locale/cz/index'
 
 // create info about langauges
 const languages = (ctx => {
@@ -56,6 +58,7 @@ Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
 Vue.i18n.add('en', translationsEn)
+Vue.i18n.add('cz', translationsCz)
 
 Vue.i18n.set(store.state.curLanguage)
 
