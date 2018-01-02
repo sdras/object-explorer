@@ -81,9 +81,9 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'if two objects are exactly the same',
+        shortDesc: 'if two references point to the same object',
         desc:
-          'Compares if two values are the same value. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison).',
+          'Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
