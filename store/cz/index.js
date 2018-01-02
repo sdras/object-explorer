@@ -4,10 +4,10 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'create a new object',
-        desc: `Creates a new object with the specified prototype object and properties.<br>
+        shortDesc: 'vytvořit nový objekt',
+        desc: `Vytvoří nový objekt s daným objektovým prototypem a vlastnostmi.<br>
           <br>
-          <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, by assigning it to a variable.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je tvorba objektů tak, jako v horním případě, že přiřadíme objekt do proměnné.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,9 +18,9 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'make a copy of an object',
+        shortDesc: 'udělat kopii objektu',
         desc:
-          'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
+          'Zkopíruje vlastní hodnoty, které lze vyčíst, z jednoho nebo více zdrojových objektů do cílového objektu. Vrácen je cílový objekt.',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>

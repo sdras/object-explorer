@@ -1,11 +1,11 @@
 export default {
-  firstMethod: 'I have an object, I would like to',
-  infoPropMethod: 'I need to get',
-  methodOptions: 'I need to',
+  firstMethod: 'Maám objekt a chci',
+  infoPropMethod: 'Potřebuji získat',
+  methodOptions: 'Potřebuji',
   methodTypes: {
-    create: 'create',
-    determine: 'determine',
-    'return a': 'return a',
+    create: 'vytvořit',
+    determine: 'zjistit',
+    'return a': 'vrátit',
     'find out': 'find out',
     'get an array of all of the': 'get an array of all of the'
     // string: 'string'
