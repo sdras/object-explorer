@@ -122,7 +122,7 @@ export default {
         name: 'isPrototypeOf',
         shortDesc: `if the object is in the prototype chain.`,
         desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
-        example: `function Rect() {}<br>  
+        example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
         <br>
@@ -256,21 +256,21 @@ export default {
         {
           name: 'keys',
           shortDesc: `keys`,
-          desc: `Returns an array containing the names of all of of the object's keys that can be looped through, in the order that they would be looped through.`,
+          desc: `Returns an array containing the names of all of the object's keys that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
           shortDesc: `values`,
-          desc: `Returns an array containing the names of all of of the object's values that can be looped through, in the order that they would be looped through.`,
+          desc: `Returns an array containing the names of all of the object's values that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
           shortDesc: `keys and values`,
-          desc: `Returns a nested array containing the names of all of of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
+          desc: `Returns a nested array containing the names of all of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
@@ -315,7 +315,7 @@ export default {
         name: 'isPrototypeOf',
         shortDesc: `find out if the object is in the prototype chain.`,
         desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
-        example: `function Rect() {}<br>  
+        example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
         <br>

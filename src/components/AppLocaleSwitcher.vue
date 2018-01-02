@@ -2,7 +2,7 @@
   <div class="localization-dropdown">
     <a href="https://sdras.github.io/array-explorer/"><em>Array Explorer</em></a>
     <br>
-    Language: 
+    Language:
     <select v-model="selectedLanguage">
       <option v-for="(val, key) in languages" :value="key">{{val.long}}</option>
     </select>
@@ -19,7 +19,6 @@ export default {
   },
   watch: {
     selectedLanguage(newLang) {
-      console.log('new lang', newLang)
       this.$store.commit('changeLanguage', newLang)
       this.$store.commit('resetSelection')
     }
