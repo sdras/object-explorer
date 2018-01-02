@@ -4,9 +4,11 @@ import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
 import en from './en/index'
+import nl from './nl/index'
 
 // import translations of labels
 import translationsEn from '../src/locale/en/index'
+import translationsNl from '../src/locale/nl/index'
 
 // create info about langauges
 const languages = (ctx => {
@@ -42,7 +44,8 @@ const mutations = {
 
 export const store = new Vuex.Store({
   modules: {
-    en
+    en,
+    nl
   },
   state: {
     selectedMethod: undefined,
@@ -56,6 +59,7 @@ Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
 Vue.i18n.add('en', translationsEn)
+Vue.i18n.add('nl', translationsNl)
 
 Vue.i18n.set(store.state.curLanguage)
 
