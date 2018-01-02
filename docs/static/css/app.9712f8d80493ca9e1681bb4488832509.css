@@ -55,6 +55,7 @@ html {
   letter-spacing: 0.005em;
 }
 #app,
+button,
 option,
 select {
   font-family: Gill Sans W04 Book, Helvetica, Arial, sans-serif;
@@ -94,6 +95,7 @@ body {
   margin: 40px;
 }
 main {
+  margin-top: 60px;
   width: 95%;
   display: grid;
   grid-gap: 40px;
@@ -108,9 +110,14 @@ main {
 .usage {
   margin: 35px 0 0;
 }
-.localization-dropdown[data-v-7df1e462] {
+select[data-v-338ab544] {
+  margin-top: 8px;
+}
+.localization-dropdown[data-v-338ab544] {
   position: absolute;
   right: 8%;
+  top: 35px;
+  text-align: right;
 }
 .findoutmore[data-v-d5bb48e2] {
   position: absolute;
@@ -250,4 +257,4 @@ p.link[data-v-152c572e] {
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-/*# sourceMappingURL=app.6a5a7118c901d8e3254d6a89b4171ec1.css.map */
+/*# sourceMappingURL=app.9712f8d80493ca9e1681bb4488832509.css.map */
