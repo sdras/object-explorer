@@ -177,7 +177,7 @@ export default {
       {
         name: 'toLocaleString',
         shortDesc: `localized string representation of the object.`,
-        desc: `The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has differnt data based on location, such as date methods, it will give you a different time format`,
+        desc: `The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has different data based on location, such as date methods, it will give you a different time format`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
