@@ -3,14 +3,20 @@ import Vuex from 'vuex'
 import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
+import de from './de/index'
 import en from './en/index'
+import zh_cn from './zh_cn/index'
 import nl from './nl/index'
+import PTpt from './pt-pt/index'
 
 // import translations of labels
+import translationsDe from '../src/locale/de/index'
 import translationsEn from '../src/locale/en/index'
+import translationsZhCn from '../src/locale/zh_cn/index'
 import translationsNl from '../src/locale/nl/index'
+import translationsPTpt from '../src/locale/pt-pt/index'
 
-// create info about langauges
+// create info about languages
 const languages = (ctx => {
   let keys = ctx.keys()
   let values = keys.map(ctx)
@@ -37,6 +43,7 @@ const mutations = {
     state.selectedMethod = ''
   },
   changeLanguage(state, newLang) {
+    console.log(newLang)
     state.curLanguage = newLang
     Vue.i18n.set(newLang)
   }
@@ -44,7 +51,11 @@ const mutations = {
 
 export const store = new Vuex.Store({
   modules: {
+    de,
     en,
+    nl,
+    'pt-pt': PTpt,
+    zh_cn,
     nl
   },
   state: {
@@ -58,12 +69,15 @@ export const store = new Vuex.Store({
 Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
+Vue.i18n.add('de', translationsDe)
 Vue.i18n.add('en', translationsEn)
+Vue.i18n.add('zh_cn', translationsZhCn)
 Vue.i18n.add('nl', translationsNl)
+Vue.i18n.add('pt-pt', translationsPTpt)
 
 Vue.i18n.set(store.state.curLanguage)
 
 // registering only the current language
 // would be also possible but unloading & loading would be required
 // at language change --> can be added later (for now load all langauges)
-// store.registerModule('de', de);
+// store.registerModule('de', de)
