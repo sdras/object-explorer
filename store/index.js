@@ -29,8 +29,6 @@ const languages = (ctx => {
   return res
 })(require.context('./', true, /[a-z]{2}/))
 
-console.log(languages)
-
 Vue.use(Vuex)
 
 const mutations = {
