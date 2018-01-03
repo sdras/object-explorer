@@ -6,20 +6,20 @@ export default {
     create: 'vytvořit',
     determine: 'zjistit',
     'return a': 'vrátit',
-    'find out': 'find out',
-    'get an array of all of the': 'get an array of all of the'
+    'find out': 'zjistit',
+    'get an array of all of the': 'získat pole všech'
     // string: 'string'
   },
-  details: 'details about the property',
-  list: 'a list of all of the keys and/or values',
+  details: 'podrobnosti o vlastnosti',
+  list: 'seznam všech klíčů anebo hodnot',
   primaryOptions: [
-    'create an object',
-    'create properties',
-    'get information about an object',
-    'get information about properties',
-    'restrict changes to an object',
-    'create a string from an object',
-    'manage prototypes'
+    'vytvořit objekt',
+    'vytvořit vlastnost',
+    'získat informaci o objektu',
+    'získat informaci o vlastnosti',
+    'omezit změny pro objekt',
+    'vytvořit řetězec z objektu',
+    'spravovat prototypy'
   ]
   // other text can be added here
 }
