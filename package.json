@@ -1,13 +1,11 @@
 {
   "name": "object-explorer",
   "version": "1.0.0",
-  "description":
-    "A resource to help figure out what object method would be best to use at any given time",
+  "description": "A resource to help figure out what object method would be best to use at any given time",
   "author": "sdras <sarah.drasner@gmail.com>",
   "private": true,
   "scripts": {
-    "dev":
-      "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
@@ -58,5 +56,9 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

@@ -15,7 +15,11 @@ yarn-error.log*
 .AppleDouble
 .LSOverride
 
-# Icon must end with two 
+
+# Build
+dist
+
+# Icon must end with two
 Icon
 # Thumbnails
 ._*
