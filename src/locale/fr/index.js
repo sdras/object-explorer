@@ -1,16 +1,16 @@
 export default {
-  firstMethod: "J'ai un objet, j'aimerais",
+  firstMethod: "J'ai un objet, je veux",
   infoPropMethod: "Je veux obtenir",
   methodOptions: "Je veux",
   methodTypes: {
     create: "créer",
     determine: "déterminer",
-    'return a': "retourner un",
+    'return a': "obtenir",
     'find out': "trouver",
     'get an array of all of the': "obtenir un array de tous/toutes les"
     // string: 'string'
   },
-  details: "détails sur la propriété",
+  details: "des détails sur la propriété",
   list: "une liste de toutes les propriétés et/ou valeurs",
   primaryOptions: [
     "créer un objet",
