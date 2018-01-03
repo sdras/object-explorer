@@ -1,150 +1,140 @@
 <template>
   <aside>
-    <div class="usage-code usage1">
-      <p v-if="!selectedUsage || (selectedUsage && selectedUsage.name !== 'isPrototypeOf')">
-        <span>let obj = {<br>
-        <span>&nbsp;&nbsp;</span>a: 1,<br>
-        <span>&nbsp;&nbsp;</span>b: 2,<br>
-        <span>&nbsp;&nbsp;</span>c: 3<br>
-        };</span>
-      </p>
-      <p>
-        <span v-if="selectedUsage"
-          class="exampleoutput"
-          ref="ex"
-          v-html="selectedUsage.example">
-        </span>
-      </p>
+
+    <div class="code-block-wrapper" ref="ex">
+        <div class="code-block-bg"></div>
+        <div class="code-block usage1" >
+          <p v-if="!selectedUsage || (selectedUsage && selectedUsage.name !== 'isPrototypeOf')">
+            <span>let obj = {<br>
+            <span>&nbsp;&nbsp;</span>a: 1,<br>
+            <span>&nbsp;&nbsp;</span>b: 2,<br>
+            <span>&nbsp;&nbsp;</span>c: 3<br>
+            };</span>
+          </p>
+          <p >
+            <span v-if="selectedUsage"
+              class="exampleoutput"
+              v-html="selectedUsage.example">
+            </span>
+          </p>
+        </div>
     </div>
-    <div v-if="selectedUsage" class="usage2">
+
+    <div  class="usage2">
       <h3 class="usage-title">Output</h3>
-      <div class="usage-code">
-        <p>
-          <span
-            class="exampleoutput2"
-            ref="ex2"
-            v-html="selectedUsage.output">
-          </span>
-        </p>
-      </div><!--usage-code-->
+      <div class="code-block-wrapper" ref="ex2">
+        <div class="code-block-bg"></div>
+        <div class="code-block" >
+            <p>
+              <span
+                class="exampleoutput2"
+                v-html="selectedUsage ? selectedUsage.output: ''">
+              </span>
+            </p>
+          </div><!--code-block-->
+  </div>
     </div>
   </aside>
 </template>
 
 <script>
-import { TweenLite, TimelineMax, Back, Power4 } from 'gsap'
-
+import anime from "animejs";
 export default {
   methods: {
-    typeOut() {
-      let split = new SplitText(this.$refs.ex, { type: 'chars' }),
-        split2 = new SplitText(this.$refs.ex2, { type: 'chars' }),
-        tl = new TimelineMax()
+    setScale(el, scale, initialHeight) {
+      el.style.height = `${initialHeight}px`;
+      anime({
+        targets: el,
+        scaleY: scale,
+        elasticity: 50,
+        duration: 600
+      });
+    },
+    makeVisible(el) {
+      anime({
+        targets: el,
+        easing: "easeOutSine",
+        scaleY: [
+          { value: [1.05, 1], duration: 200 },
+          { value: 1, duration: 450, delay: 500 }
+        ],
+        duration: 400
+      });
+    },
 
-      tl.add('start')
-      tl.to(this.$refs.ex, 0.1, {
-        opacity: 1
-      })
-      tl.staggerFromTo(
-        split.chars,
-        0.1,
-        {
-          opacity: 0,
-          scale: 0,
-          color: '#aeded4',
-          transformOrigin: '50% 50%'
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          color: '#fff',
-          transformOrigin: '50% 50%',
-          ease: Power4.easeOut
-        },
-        0.03,
-        'start+=0'
-      )
-      tl.staggerTo(
-        split.chars,
-        0.1,
-        {
-          color: '#aeded4',
-          ease: Back.easeIn
-        },
-        0.03,
-        'start+=0.1'
-      )
-
-      tl.to(this.$refs.ex2, 0.1, {
-        opacity: 1
-      })
-      tl.staggerFromTo(
-        split2.chars,
-        0.1,
-        {
-          opacity: 0,
-          scale: 0,
-          color: '#aeded4',
-          transformOrigin: '50% 50%'
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          color: '#fff',
-          transformOrigin: '50% 50%',
-          ease: Power4.easeOut
-        },
-        0.03,
-        'start1+=0'
-      )
-      tl.staggerTo(
-        split2.chars,
-        0.1,
-        {
-          color: '#ecc2a4',
-          ease: Back.easeIn
-        },
-        0.03,
-        'start1+=0.1'
-      )
+    setHeights() {
+      this.refs.forEach(ref => {
+        const scale = ref.el.offsetHeight / ref.initH;
+        this.setScale(ref.el.firstChild, scale, ref.initH);
+        if (ref.initH !== ref.el.getBoundingClientRect().height)
+          this.makeVisible(ref.el.lastChild);
+      });
     }
   },
+  mounted() {
+    this.refs = [
+      {
+        initH: this.$refs.ex.getBoundingClientRect().height,
+        el: this.$refs.ex
+      },
+      {
+        initH: this.$refs.ex2
+          ? this.$refs.ex2.getBoundingClientRect().height
+          : 0,
+        el: this.$refs.ex2
+      }
+    ];
+
+    this.$nextTick(this.setHeights);
+  },
+
   computed: {
     selectedUsage() {
-      return this.$store.state.selectedMethod
+      return this.$store.state.selectedMethod;
     }
   },
+
   watch: {
     selectedUsage() {
-      if (this.selectedUsage) {
-        TweenMax.set([this.$refs.ex, this.$refs.ex2], {
-          opacity: 0
-        })
-        setTimeout(() => {
-          this.typeOut()
-        }, 500)
-      }
+      window.requestAnimationFrame(this.setHeights);
     }
   }
-}
+};
 </script>
 
 <style>
-.usage-code {
-  padding: 0 20px;
-  margin: 20px 0;
+.code-block-wrapper {
+  position: relative;
+}
+
+.code-block-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: #333;
-  border: 2px solid #f55e41;
-  transition: 0.2s all ease;
+  transform-origin: 0 0;
+  width: 100%;
+}
+
+.code-block {
+  padding: 20px;
+  margin: 20px 0;
   display: block;
   border-radius: 5px;
   line-height: 1.5em;
   font-family: monospace;
   font-size: 17px;
+  position: relative;
+  z-index: 1;
 }
 
 .usage-title {
   margin-top: 50px;
+}
+
+.exampleoutput,
+.exampleoutput2 {
+  display: inline-block;
 }
 
 .usage1 {
@@ -158,12 +148,5 @@ export default {
 .exampleoutput,
 .exampleoutput2 {
   display: inline-block;
-  opacity: 0;
-}
-
-.exampleoutput div,
-.exampleoutput2 div {
-  opacity: 0;
-  transform: scale(0);
 }
 </style>
