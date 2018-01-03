@@ -1,12 +1,13 @@
 export default {
   state: {
     selectedMethod: '',
-    createObj: [{
+    createObj: [
+      {
         name: 'create',
-        shortDesc: 'crear un nuevo objeto',
-        desc: `Crea un nuevo objeto con el objeto y propiedades del prototipo especificado.<br>
+        shortDesc: 'vytvořit nový objekt',
+        desc: `Vytvoří nový objekt s daným objektovým prototypem a vlastnostmi.<br>
           <br>
-          <strong>¡Nota importante para los principiantes! </strong> Es más común crear un objeto de la manera que se muestra en la parte superior del ejemplo, asignándolo a una variable.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je tvorba objektů tak, jako v horním případě, že přiřadíme objekt do proměnné.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -17,8 +18,9 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'realizar una copia de un objeto',
-        desc: 'Copiar los valores de todas la propiedades enumerables de uno o más objetos fuente a un objeto destino. Retorna el objeto destino.',
+        shortDesc: 'udělat kopii objektu',
+        desc:
+          'Zkopíruje vlastní hodnoty, které lze vyčíst, z jednoho nebo více zdrojových objektů do cílového objektu. Vrácen je cílový objekt.',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -28,12 +30,13 @@ export default {
         }`
       }
     ],
-    createProp: [{
+    createProp: [
+      {
         name: 'defineProperty',
-        shortDesc: 'una nueva propiedad o modificar una existente',
-        desc: `Define una nueva propiedad sobre un objeto, o modifica una ya existente, y devuelve el objeto modificado.<br>
+        shortDesc: 'novou vlastnost nebo upravit existující vlastnost',
+        desc: `Přidá pojmenovanou vlastnost dle daného deskriptoru.<br>
           <br>
-          <strong>¡Nota importante para los principiantes! </strong> Es más común usar notación de punto o de corchete para crear una nueva propiedad o modificar una existente. Así: <code>obj.a = 1</code> o <code>obj[a] = 1</code>. Esto no es técnicamente un método incorporado, por eso no está incluido.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není zabudovaná metoda, tak to není ukázáno samostatně.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -46,10 +49,10 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'una o mas propiedades o modificar propiedades existentes',
-        desc: `Añade una o mas propiedades o modifica propiedades existentes directamente en el objeto, retornando el objeto.<br>
+        shortDesc: 'jednu nebo více vlastností nebo je upravovat',
+        desc: `Přidá jednu nebo více vlastností dle daného deskriptoru<br>
           <br>
-          <strong>Nota importante para los principiantes! </strong> Es más común utilizar notación de punto o de corchete para crear una nueva propiedad o modificar una existente. Así: <code>obj.a = 1</code> o <code>obj[a] = 1</code>. Técnicamente no es un método incorporado, por eso no está incluido.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není zabudovaná metoda, tak to není ukázáno samostatně.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -65,10 +68,11 @@ export default {
         output: `{a: 1, b: 2, c: 3, d: 4, e: 5}`
       }
     ],
-    infoObj: [{
+    infoObj: [
+      {
         name: 'isExtensible',
-        shortDesc: 'si mas propiedades pueden ser agregadas',
-        desc: 'Determina si un objeto puede tener propiedades nuevas agregadas.',
+        shortDesc: 'jestli je možné přidat vlastnosti',
+        desc: 'Zjistí jestli je objekt rozšiřitelný.',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -77,8 +81,9 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'si dos referencias apuntan al mismo objeto',
-        desc: 'Compara si dos referencias apuntan al mismo objeto. Iguala todos los valores NaN (que difiere tanto de la Comparación de igualdad abstracta como de la Comparación de igualdad estricta). Éste es un poco raro, y los documentos de los MDN son un poco engañosos.',
+        shortDesc: 'jestli dvě reference odkazují na stejný objekt',
+        desc:
+          'Porovná jestli dvě reference odkazují na stejný objekt. Všechny NaN hodnoty považuje za ekvivalentní, tím se liší od Abstraktního (==) i Přísného (===) Porovnání. Tato funkce je trochu podivná a MDN dokumentace je krapet zavádějící.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -92,8 +97,8 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `si un objeto y sus propiedades no pueden ser modificadas`,
-        desc: 'Determina si un objeto esta congelado',
+        shortDesc: `jestli objekt a jeho vlastnosti jsou neupravitelné`,
+        desc: 'Zjistí jestli objekt je neměnný (frozen).',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -102,8 +107,8 @@ export default {
       },
       {
         name: 'isSealed',
-        shortDesc: `si un objeto no puede ser modificado (aunque sus propiedades pueden serlo)`,
-        desc: 'Determina si un objeto o sus propiedades están sellados.',
+        shortDesc: `jestli objekt je neupravitelný, ale jeho vlastnosti jsou upravitelné`,
+        desc: 'Zjistí jestli objekt nebo jeho vlastnosti jsou neupravitelné (sealed).',
         example: `Object.defineProperty(obj, 'a', {<br>
         <span>&nbsp;&nbsp;</span>configurable: false<br>
         })<br>
@@ -115,8 +120,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `comprobar si un objeto se encuentra en la cadena de prototipado de otro.`,
-        desc: `Devuelve un booleano indicando si el objeto al que se llama este método está en la cadena de prototipos del objeto especificado.`,
+        shortDesc: `jestli je objekt v prototypovém řetězu.`,
+        desc: `Vrátí boolean, který říká, jestli je objekt, na kterém je tato metoda volána, v prototypovém řetězu jiného objektu.`,
         example: `function Rect() {}<br>  
         <br>
         var rect = new Rect();<br>
@@ -126,30 +131,32 @@ export default {
         useExample: 'newExample'
       }
     ],
-    noChange: [{
+    noChange: [
+      {
         name: 'seal',
-        shortDesc: `asegurarse de que las propiedades no se pueden añadir o eliminar`,
-        desc: 'Impide que otro código borre las propiedades de un objeto. Las propiedades existentes todavía pueden ser modificadas.',
+        shortDesc: `zajistit, že vlastnosti nemohou být smazány ani přidány`,
+        desc:
+          'Zabrání jinému kódu smazání vlastností objektu. Existující vlastnosti mohou být upraveny.',
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
         console.log(obj);`,
-        output: `{a: 1, b: 2, c: 3} // obj.c no se elimina`
+        output: `{a: 1, b: 2, c: 3} // obj.c doesn't get deleted`
       },
       {
         name: 'freeze',
-        shortDesc: `asegurarse de que las propiedades no se pueden añadir, eliminar o modificar`,
-        desc: `Congela un objeto: otro código no puede borrar o cambiar ninguna propiedad.`,
+        shortDesc: `zajistit, že vlastnosti nemohou být smazány,přidány ani upravovány`,
+        desc: `Zmrazí objekt tak, že jiný kód nemůže změnit nebo upravit jakoukoli vlastnost.`,
         example: `Object.freeze(obj);<br>
         obj.a = 10;<br>
         <br>
         console.log(obj.a);`,
-        output: `1 <span class="comment">//el valor no se actualiza a 10</span>`
+        output: `1 <span class="comment">//the value didn't update to 10</span>`
       },
       {
         name: 'preventExtensions',
-        shortDesc: `asegurarse de que no se pueden añadir propiedades.`,
-        desc: `Previene cualquier extensión de un objeto. Todavía se pueden eliminar propiedades pero no se puede añadir ninguna nueva.`,
+        shortDesc: `zajistit, že další vlastnosti nemohou být přidány.`,
+        desc: `Zabrání všem rozšířením objektu, ale nezabrání jejich smazání.`,
         example: `Object.preventExtensions(obj);<br>
         obj.d = 4;<br>
         <br>
@@ -157,10 +164,11 @@ export default {
         output: `undefined`
       }
     ],
-    createString: [{
+    createString: [
+      {
         name: 'toString',
-        shortDesc: `cadena de caracteres representando al objeto`,
-        desc: `El método <code>toString()</code> devuelve una cadena de caracteres que representa el objeto.`,
+        shortDesc: `řetězec reprezentující objekt.`,
+        desc: `<code>toString()</code> metoda vrací řetězec reprezentující objekt.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -168,8 +176,8 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `devolver la representación del objeto como una cadena utilizando la configuración regional.`,
-        desc: `El método <code>toLocaleString()</code> devuelve una cadena que representa el objeto. Este método debe ser sustituido por objetos derivados para fines específicos de la configuración regional. En términos humanos: esto significa que si tienes algo que tiene datos diferentes basados en la ubicación, como métodos de fecha, te dará un formato de hora diferente.`,
+        shortDesc: `localizovaný řetězec reprezentující objekt.`,
+        desc: `<code>toLocaleString()</code> metoda vrací řetězec reprezentující objekt. Tato metoda je navržena tak, aby byla přepsána pro místní potřeby. Lidská verze: pokud máte něco, co má jiná data v závislosti na poloze, např. metody pro datum, tak to vrací jiný formát pro datumy podle místa.`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -179,10 +187,12 @@ export default {
       }
     ],
     infoProp: {
-      details: [{
+      details: [
+        {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `detalles sobre una propiedad`,
-          desc: 'Devuelve un descriptor para una propiedad en un objeto.',
+          shortDesc: `podrobnosti o vlastnosti`,
+          desc:
+            'Vrátí deskriptor vlastnosti pro pojmenovanou vlastnost objektu.',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -195,8 +205,9 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `detalles sobre todas las propiedades de un objeto`,
-          desc: 'Devuelve un objeto que contiene todos las descripciones de propiedad propias de un objeto.',
+          shortDesc: `podrobnosti o všech vlastnostech objektu`,
+          desc:
+            'Vrátí objekt obsahující všechny vlastní deskriptory vlastností objektu.',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -221,8 +232,9 @@ export default {
         },
         {
           name: 'propertyIsEnumerable',
-          shortDesc: `si una propiedad puede ser recorrida con un bucle for... in`,
-          desc: 'Devuelve un booleano que indica si el atributo interno ECMAScript [[Enumerable]] está configurado. Esto se puede utilizar para ver si algo es un método incorporado o definido por el usuario porque las propiedades incorporadas tienden a no ser enumerables.',
+          shortDesc: `jestli se vlastnost dostupná pro for...in cyklus`,
+          desc:
+            'Vrací boolean, který říká, jestli je interní ECMAScript [[Enumerable]] atribut nastaven. Tuto funkci lze použít pokud chceme zjistit jestli se jedná o vestavěnou nebo uživatelem definovanou metodu, protože vestavěné metody nemají enumerable nastaveno.',
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
@@ -230,8 +242,9 @@ export default {
         },
         {
           name: 'hasOwnProperty',
-          shortDesc: `si existe una propiedad como propiedad directa del objeto`,
-          desc: 'Devuelve un booleano indicando si un objeto contiene la propiedad especificada como una propiedad directa de ese objeto y no heredada a través de la cadena del prototipo.',
+          shortDesc: `jestli vlastnost existuje jako přímá vlastnost objektu`,
+          desc:
+            'Vrací boolean, který říká, jestli objekt obsahuje danou vlastnost jako přímou vlastnost, nikoli jako zděděnou z prototypového řetězu.',
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
@@ -239,31 +252,32 @@ export default {
           false`
         }
       ],
-      list: [{
+      list: [
+        {
           name: 'keys',
-          shortDesc: `claves`,
-          desc: `Devuelve un array que contiene los nombres de todas las claves del objeto por las que se puede hacer un bucle, en el orden en que se harían.`,
+          shortDesc: `klíčů`,
+          desc: `Vrátí pole klíčů obsahující jména všech klíčů objektu, kterými lze projít v cyklech, řazené tak, jak by byly projity v cyklu.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `valores`,
-          desc: `Devuelve un array que contiene los nombres de todos los valores del objeto por los que se puede hacer un bucle, en el orden en que se harían.`,
+          shortDesc: `hodnot`,
+          desc: `Vrátí pole hodnot obsahující jména všech hodnot objektu, kterými lze projít v cyklech, řazené tak, jak by byly projity v cyklu.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `claves y valores`,
-          desc: `Devuelve un array anidado que contiene los nombres de todos los pares clave/valor del objeto a través de los que se puede hacer un bucle, en el orden en que se harían.`,
+          shortDesc: `klíčů a hodnot`,
+          desc: `Vrací vnořené (nested) pole obsahující jména všech párů klíč-hodnota objektu, kterými lze projít v cyklech, řazené tak, jak by byly projity v cyklu.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `claves, incluso si no puedes pasar a través de ellas`,
-          desc: `Devuelve un array que contiene los nombres de todas las propiedades enumerables y no numerables del objeto en cuestión. Hace lo mismo que <code>Object.keys()</code>, recuperando las claves del objeto, pero <code>getOwnPropertyNames()</code> incluye propiedades que no pueden ser enlazadas.`,
+          shortDesc: `klíčů, i když přes ně nelze procházet v cyclech`,
+          desc: `Vrací pole obsahující jména všech počitatelných (enumerable) i nepočitatelných vlastností. Dělá to stejné jako <code>Object.keys()</code>, ale <code>getOwnPropertyNames()</code> zahrne i ty vlastnosti, které cykly vynechávají.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -275,18 +289,19 @@ export default {
         }
       ]
     },
-    prototype: [{
+    prototype: [
+      {
         name: 'getPrototypeOf',
-        shortDesc: `conseguir un prototipo del objeto.`,
-        desc: `Devuelve el prototipo del objeto especificado. (es decir, el valor de la propiedad interna [[Prototype]]) del objeto especificado).`,
+        shortDesc: `získat prototyp objektu.`,
+        desc: `Vrací prototyp daného objektu, hodnotu interní vlastnosti [[Prototype]].`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
       },
       {
         name: 'setPrototypeOf',
-        shortDesc: `asigna un prototipo al objeto.`,
-        desc: `Advertencia: este método es realmente lento. Utilizar con precaución, o sustituir por <code>Object.create ()</code>. Establece el prototipo (es decir, la propiedad interna [[Prototype]]).`,
+        shortDesc: `nastavit prototyp objektu.`,
+        desc: `Varování: Tato metoda je velmi pomalá. Používej tuto opatrně metodu nebo se jí vyhni přes <code>Object.create()</code>. Nastaví prototyp, hodnotu interní vlastnosti [[Prototype]].`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
@@ -298,8 +313,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `averiguar si el objeto está en la cadena del prototipo.`,
-        desc: `Devuelve un booleano indicando si el objeto al que se llama este método está en la cadena de prototipos del objeto especificado.`,
+        shortDesc: `zjistit jestli je objekt v prototypovém řetězu.`,
+        desc: `Vrací boolean, který říká, jestli je objekt, na kterém je tato metoda volána, v protypovém řetězu daného objektu.`,
         example: `function Rect() {}<br>  
         <br>
         var rect = new Rect();<br>
