@@ -5,7 +5,7 @@ export default {
   methodTypes: {
     create: 'crear',
     determine: 'determinar',
-    'return a': 'retornar un',
+    'return a': 'retornar una',
     'find out': 'encontrar',
     'get an array of all of the': 'obtener un arreglo de todos (as) los (as)'
     // string: 'string'
