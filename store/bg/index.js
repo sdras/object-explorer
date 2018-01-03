@@ -134,9 +134,9 @@ export default {
     noChange: [
       {
         name: 'seal',
-        shortDesc: `make sure properties can't be added or deleted`,
+        shortDesc: `забраня добавяне или премахване на свойства`,
         desc:
-          'Prevents other code from deleting properties of an object. Existing properties can still be modified.',
+          'Предпазва свойствата на обект да бъдат изтрити от друг код. Съществуващите свойства могат да бъдат променени.',
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
@@ -145,8 +145,8 @@ export default {
       },
       {
         name: 'freeze',
-        shortDesc: `make sure properties can't be added, deleted, or modified`,
-        desc: `Freezes an object: other code can't delete or change any properties.`,
+        shortDesc: `забраня добавяне, премахване или промяна на свойства`,
+        desc: `Замръзява обекта: свойствата не могат да бъдат премахнати или променени.`,
         example: `Object.freeze(obj);<br>
         obj.a = 10;<br>
         <br>
@@ -155,8 +155,8 @@ export default {
       },
       {
         name: 'preventExtensions',
-        shortDesc: `make sure properties can't be added.`,
-        desc: `Prevents any extensions of an object. I can still delete properties but can't add any new ones.`,
+        shortDesc: `забраня добавяне на свойства`,
+        desc: `Предпазва обекта от удължаване. Свойства могат да бъдат изтрити, но нови не могат да бъдат добавени.`,
         example: `Object.preventExtensions(obj);<br>
         obj.d = 4;<br>
         <br>
@@ -167,8 +167,8 @@ export default {
     createString: [
       {
         name: 'toString',
-        shortDesc: `string representation of the object.`,
-        desc: `The <code>toString()</code> method returns a string representing the object.`,
+        shortDesc: `обекта представен като низ`,
+        desc: `Методът <code>toString()</code> връща низ от предоставения обект.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -176,8 +176,8 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `localized string representation of the object.`,
-        desc: `The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has different data based on location, such as date methods, it will give you a different time format`,
+        shortDesc: `локализиран низ от предоставения обект`,
+        desc: `Методът <code>toLocaleString()</code> връща низ от предоставения обект. Този метод е предоставен за работа с локализации и може да бъде презаписан от производни обекти. Това означава, че ако имате обект съдържащ разнични данни в зависимост от локацията, например методи за дати, те ще продоставят различен формат.`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -190,9 +190,8 @@ export default {
       details: [
         {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `details about a property`,
-          desc:
-            'Returns a property descriptor for a named property on an object.',
+          shortDesc: `детайли за свойство`,
+          desc: 'Връща описание на свойство от обекта за свойство с това име.',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -205,9 +204,9 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `details about all the properties on an object`,
+          shortDesc: `детайли за всички свойства на обекта`,
           desc:
-            'Returns an object containing all own property descriptors for an object.',
+            'Връща обект съдържащ всички описания на собствени свойства на обект.',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -232,9 +231,9 @@ export default {
         },
         {
           name: 'propertyIsEnumerable',
-          shortDesc: `if a property can be traversed with a for...in loop`,
+          shortDesc: `дали свойство може да бъде обходено с for...in цикъл`,
           desc:
-            'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set. This can be used to see if something is a built-in or user-defined method because built-in properties tend to not be enumerable',
+            'Връща булева стойност в зависимост дали вътрешния ECMAScript [[Enumerable]] атрибут е зададен. Това може да бъде използвано за проверка дали метод е зададен по подразбиране или е зададен от потребителя, защото зададените по подразбиране свойства обикновено не са Enumerable.',
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
@@ -242,9 +241,9 @@ export default {
         },
         {
           name: 'hasOwnProperty',
-          shortDesc: `if a property exists as a direct property of the object`,
+          shortDesc: `дали свойство съществува като директно свойство на обекта`,
           desc:
-            'Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.',
+            'Връща булева стойност в зависимост дали обекта съдържа определеното свойство като директно свойство на този обект, а не наследено чрез прототипната верига.',
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
@@ -255,29 +254,29 @@ export default {
       list: [
         {
           name: 'keys',
-          shortDesc: `keys`,
-          desc: `Returns an array containing the names of all of of the object's keys that can be looped through, in the order that they would be looped through.`,
+          shortDesc: `ключове`,
+          desc: `Връща масив съдържащ имената на всички ключове на обекта. Масива може да бъде обходен в последователността, в която ключовете биха били обходени.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `values`,
-          desc: `Returns an array containing the names of all of of the object's values that can be looped through, in the order that they would be looped through.`,
+          shortDesc: `стойности`,
+          desc: `Връща масив съдържащ имената на всички стойности на обекта. Масива може да бъде обходен в последователността, в която стойностите биха били обходени.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `keys and values`,
-          desc: `Returns a nested array containing the names of all of of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
+          shortDesc: `ключове и стойности`,
+          desc: `Връща масив от масиви от съдържащи всички двойки ключове и стойности на обекта. Масива може да бъде обходен в последователността, в която ключовете и стойностите биха били обходени.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `keys, even if you can't loop through them`,
-          desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as <code>Object.keys()</code>, retrieving the keys in the object, but <code>getOwnPropertyNames()</code> will include properties that can't be looped through.`,
+          shortDesc: `ключове дори и да не могат да бъдат обходени`,
+          desc: `Връща масив съдържащ всички имена на свойства на обект без значение дали могат да бъдат обходени. Прави същото като <code>Object.keys()</code> връщайки ключовете на обекта, но <code>getOwnPropertyNames()</code> също съдържа свойства който не могат да бъдат обходени.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -292,16 +291,16 @@ export default {
     prototype: [
       {
         name: 'getPrototypeOf',
-        shortDesc: `get a prototype of the object.`,
-        desc: `Returns the prototype of the specified object. (i.e. the value of the internal [[Prototype]] property) of the specified object).`,
+        shortDesc: `получа прототип на обекта`,
+        desc: `Връща прототипа на подадения обект (тоест, стойността на вътрешното <code>[[Prototype]]</code> свойство).`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
       },
       {
         name: 'setPrototypeOf',
-        shortDesc: `set a prototype of the object.`,
-        desc: `Warning: this method is really slow. Use with caution, or replace with <code>Object.create()</code>. Sets the prototype (i.e., the internal [[Prototype]] property).`,
+        shortDesc: `задам прототип на обекта`,
+        desc: `Внимание: този метод е много бавен. Използвайте внимателно или заменете с <code>Object.create()</code>. Задава прототипа (тоест, стойността на вътрешното <code>[[Prototype]]</code> свойство).`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
@@ -313,8 +312,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `find out if the object is in the prototype chain.`,
-        desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
+        shortDesc: `разбера дали обекта е в прототипната верига`,
+        desc: `Връща булева стойност в зависимост дали обекта е в прототипната верига на подадения в метода обект.`,
         example: `function Rect() {}<br>  
         <br>
         var rect = new Rect();<br>
