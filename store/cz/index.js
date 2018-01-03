@@ -36,7 +36,7 @@ export default {
         shortDesc: 'novou vlastnost nebo upravit existující vlastnost',
         desc: `Přidá pojmenovanou vlastnost dle daného deskriptoru.<br>
           <br>
-          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není vlastní metoda, tak to není ukázáno samostatně.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není zabudovaná metoda, tak to není ukázáno samostatně.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -52,7 +52,7 @@ export default {
         shortDesc: 'jednu nebo více vlastností nebo je upravovat',
         desc: `Přidá jednu nebo více vlastností dle daného deskriptoru<br>
           <br>
-          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není vlastní metoda, tak to není ukázáno samostatně.`,
+          <strong>Důležitá poznámka pro začátečníky!</strong> Častější je použití tečkové notace nebo hranatých závorek pro vytvoření nebo úpravu vlastnosti. Např. <code>obj.a = 1</code> nebo <code>obj[a] = 1</code>. Protože to není zabudovaná metoda, tak to není ukázáno samostatně.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -83,7 +83,7 @@ export default {
         name: 'is',
         shortDesc: 'jestli dvě reference odkazují na stejný objekt',
         desc:
-          'Porovná jestli dvě reference odkazují na stejný objekt. Všechny NaN hodnoty považuje jako ekvivalentní, tím se liší od Abstraktního (==) i Přísného (===) Porovnání. Tato funkce je trochu podivná a MDN dokumentace je krapet zavádějící.',
+          'Porovná jestli dvě reference odkazují na stejný objekt. Všechny NaN hodnoty považuje za ekvivalentní, tím se liší od Abstraktního (==) i Přísného (===) Porovnání. Tato funkce je trochu podivná a MDN dokumentace je krapet zavádějící.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -177,7 +177,7 @@ export default {
       {
         name: 'toLocaleString',
         shortDesc: `localizovaný řetězec reprezentující objekt.`,
-        desc: `<code>toLocaleString()</code> metoda vrací řetězec reprezentující objekt. Tato metoda je navržena tak, aby byla přepsána pro místní potřeby. Lidská verze: pokud máte něco, co má jiná data v závislosti na poloze, např. metody pro datum.`,
+        desc: `<code>toLocaleString()</code> metoda vrací řetězec reprezentující objekt. Tato metoda je navržena tak, aby byla přepsána pro místní potřeby. Lidská verze: pokud máte něco, co má jiná data v závislosti na poloze, např. metody pro datum, tak to vrací jiný formát pro datumy podle místa.`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -277,7 +277,7 @@ export default {
         {
           name: 'getOwnPropertyNames',
           shortDesc: `klíčů, i když přes ně nelze procházet v cyclech`,
-          desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as <code>Object.keys()</code>, retrieving the keys in the object, but <code>getOwnPropertyNames()</code> will include properties that can't be looped through.`,
+          desc: `Vrací pole obsahující jména všech počitatelných (enumerable) i nepočitatelných vlastností. Dělá to stejné jako <code>Object.keys()</code>, ale <code>getOwnPropertyNames()</code> zahrne i ty vlastnosti, které cykly vynechávají.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -293,7 +293,7 @@ export default {
       {
         name: 'getPrototypeOf',
         shortDesc: `získat prototyp objektu.`,
-        desc: `Vracií prototyp daného objektu, hodnotu interní vlastnosti [[Prototype]].`,
+        desc: `Vrací prototyp daného objektu, hodnotu interní vlastnosti [[Prototype]].`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
