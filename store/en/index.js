@@ -97,7 +97,7 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `if an object and it's properties can't be modified`,
+        shortDesc: `if an object and its properties can't be modified`,
         desc: 'Determines if an object is frozen.',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
