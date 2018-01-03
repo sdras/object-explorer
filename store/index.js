@@ -3,12 +3,14 @@ import Vuex from 'vuex'
 import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
+import de from './de/index'
 import en from './en/index'
 import zh_cn from './zh_cn/index'
 import nl from './nl/index'
 import PTpt from './pt-pt/index'
 
 // import translations of labels
+import translationsDe from '../src/locale/de/index'
 import translationsEn from '../src/locale/en/index'
 import translationsZhCn from '../src/locale/zh_cn/index'
 import translationsNl from '../src/locale/nl/index'
@@ -49,6 +51,7 @@ const mutations = {
 
 export const store = new Vuex.Store({
   modules: {
+    de,
     en,
     nl,
     'pt-pt': PTpt,
@@ -66,6 +69,7 @@ export const store = new Vuex.Store({
 Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
+Vue.i18n.add('de', translationsDe)
 Vue.i18n.add('en', translationsEn)
 Vue.i18n.add('zh_cn', translationsZhCn)
 Vue.i18n.add('nl', translationsNl)
