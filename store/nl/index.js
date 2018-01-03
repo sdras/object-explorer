@@ -122,7 +122,7 @@ export default {
         name: 'isPrototypeOf',
         shortDesc: `of een object onder een prototype valt`,
         desc: `Geeft een boolean terug die aangeeft of de object die in de methode aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
-        example: `function Rect() {}<br>  
+        example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
         <br>
@@ -264,7 +264,6 @@ export default {
           name: 'values',
           shortDesc: `waardes`,
           desc: `Geeft een array terug bestaande uit alle namen van alle object waardes waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
-          desc: ``,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
@@ -314,10 +313,9 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `find out if the object is in the prototype chain.`,
         shortDesc: `uitzoeken of een object onder een prototype valt`,
         desc: `Geeft een boolean terug die aangeeft of het object van deze methode die aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
-        example: `function Rect() {}<br>  
+        example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
         <br>
