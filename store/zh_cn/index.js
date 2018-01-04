@@ -108,15 +108,11 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `一个对象是否不能被修改（但属性可以）`,
-        desc: '检查一个对象及其属性是否被封存。',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc: '检查一个对象的属性的属性描述符是否不能被修改以及不能增加新的属性。',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
