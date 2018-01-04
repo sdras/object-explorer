@@ -62,7 +62,7 @@ const mutations = {
 export const store = new Vuex.Store({
   modules: {
     en,
-    bg
+    bg,
     cz,
     de,
     en,
