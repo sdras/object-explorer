@@ -13,6 +13,7 @@ import nl from './nl/index'
 import ru from './ru/index'
 import pt_pt from './pt_pt/index'
 import zh_cn from './zh_cn/index'
+import id from './id/index'
 
 // import translations of labels
 import translationsDe from '../src/locale/de/index'
@@ -25,6 +26,7 @@ import translationsNl from '../src/locale/nl/index'
 import translationsRU from '../src/locale/ru/index'
 import translationsPtPt from '../src/locale/pt_pt/index'
 import translationsZhCn from '../src/locale/zh_cn/index'
+import translationsId from '../src/locale/id/index'
 
 // create info about languages
 const languages = (ctx => {
@@ -62,7 +64,7 @@ const mutations = {
 export const store = new Vuex.Store({
   modules: {
     en,
-    bg
+    bg,
     cz,
     de,
     en,
@@ -72,7 +74,8 @@ export const store = new Vuex.Store({
     nl,
     ru,
     pt_pt,
-    zh_cn
+    zh_cn,
+    id
   },
   state: {
     selectedMethod: undefined,
@@ -95,6 +98,7 @@ Vue.i18n.add('nl', translationsNl)
 Vue.i18n.add('ru', translationsRU)
 Vue.i18n.add('pt-pt', translationsPtPt)
 Vue.i18n.add('zh_cn', translationsZhCn)
+Vue.i18n.add('id', translationsId)
 
 Vue.i18n.set(store.state.curLanguage)
 
