@@ -11,7 +11,6 @@ export default {
     // string: 'string'
   },
   details: 'details over de property',
-  list: 'a list of all of the keys and/or values',
   list: 'een lijst van alle keys en/of waardes',
   primaryOptions: [
     'een object aanmaken',
