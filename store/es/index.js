@@ -103,15 +103,11 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `si un objeto no puede ser modificado (aunque sus propiedades pueden serlo)`,
-        desc: 'Determina si un objeto o sus propiedades están sellados.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc: 'Determina si el descriptor de sus propiedades no se puede cambiar y no se pueden crear nuevas propiedades.',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
