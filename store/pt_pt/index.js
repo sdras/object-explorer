@@ -49,7 +49,8 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'uma ou mais novas propriedades ou mudar uma ou mais propriedades existentes',
+        shortDesc:
+          'uma ou mais novas propriedades ou mudar uma ou mais propriedades existentes',
         desc: `Adiciona uma ou mais propriedades descritas pelo descritor a um objecto<br>
           <br>
           <strong>Nota importante para iniciantes!</strong> È mais comum usar pontos finais ou parênteses rectos para criar uma nova propriadade num objecto ou modificar uma ja existente.  Assim: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Mas tecnicamente isto não é um metodo incluido nos objectos por isso nao esta incluido`,
@@ -72,7 +73,8 @@ export default {
       {
         name: 'isExtensible',
         shortDesc: 'se mais propriedades podem ser adicionadas',
-        desc: 'Determina se mais propriedades podem ser adicionadas a um objecto.',
+        desc:
+          'Determina se mais propriedades podem ser adicionadas a um objecto.',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -109,14 +111,10 @@ export default {
         name: 'isSealed',
         shortDesc: `se um objecto não pode ser modificado (mas as suas propriedades podem)`,
         desc: 'Determina se um objecto ou as suas propriedades estão seladas',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -191,7 +189,8 @@ export default {
         {
           name: 'getOwnPropertyDescriptor',
           shortDesc: `detalhes sobre uma propriedade`,
-          desc: 'Retorna a descrição e caracteristicas da propriedade passada á função.',
+          desc:
+            'Retorna a descrição e caracteristicas da propriedade passada á função.',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -324,4 +323,4 @@ export default {
       }
     ]
   }
-};
+}

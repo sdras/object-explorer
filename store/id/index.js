@@ -33,7 +33,8 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: 'sebuah properti baru atau memodifikasi properti yang sudah ada',
+        shortDesc:
+          'sebuah properti baru atau memodifikasi properti yang sudah ada',
         desc: `Menambahkan properti yang diberikan oleh deskriptor ke sebuah objek.<br>
           <br>
           <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum adalah dengan menggunakan notasi dot atau kurung siku untuk membuat sebuah properti baru atau memodifikasi yang sudah ada. Seperti ini: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Secara teknis, ini bukanlah sebuah metode yang <em>built-in</em>, sehingga tidak diikutsertakan.`,
@@ -49,7 +50,8 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'satu atau lebih properti atau memodifikasi lebih dari satu properti yang sudah ada',
+        shortDesc:
+          'satu atau lebih properti atau memodifikasi lebih dari satu properti yang sudah ada',
         desc: `Menambahkan satu atau lebih properti yang dijelaskan oleh deskriptor yang diberikan ke sebuah objek.<br>
           <br>
           <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum adalah dengan menggunakan notasi dot atau kurung siku untuk membuat sebuah properti baru atau memodifikasi yang sudah ada. Seperti ini: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Secara teknis, ini bukanlah sebuah metode yang <em>built-in</em>, sehingga tidak diikutsertakan.`,
@@ -72,7 +74,8 @@ export default {
       {
         name: 'isExtensible',
         shortDesc: 'apakah saya dapat menambahkan lebih banyak properti',
-        desc: 'Menentukan apakah melakukan ekstensi terhadap suatu objek diperbolehkan.',
+        desc:
+          'Menentukan apakah melakukan ekstensi terhadap suatu objek diperbolehkan.',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -98,7 +101,8 @@ export default {
       {
         name: 'isFrozen',
         shortDesc: `apakah sebuah objek dan properti-propertinya tidak dapat dimodifikasi`,
-        desc: 'Menentukan apakah sebuah objek merupakan objek yang beku (tidak dapat dimodifikasi).',
+        desc:
+          'Menentukan apakah sebuah objek merupakan objek yang beku (tidak dapat dimodifikasi).',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -108,15 +112,12 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `apakah sebuah objek tidak dapat dimodifikasi (meskipun properti-properti terkait bisa dimodifikasi)`,
-        desc: 'Menentukan apakah sebuah objek dan properti-propertinya disegel (<em>sealed</em>).',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc:
+          'Menentukan apakah sebuah objek dan properti-propertinya disegel (<em>sealed</em>).',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
