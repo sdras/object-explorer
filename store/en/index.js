@@ -19,8 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: 'make a copy of an object',
-        desc:
-          'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
+        desc: `Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object. Though not technically a built in object method, it's more common when using ES6 to make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, by using <code>...</code>`,
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -164,7 +163,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `string representation of the object.`,
-        desc: `The <code>toString()</code> method returns a string representing the object.`,
+        desc: `The <code>toString()</code> method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>

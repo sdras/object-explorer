@@ -108,15 +108,12 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `jestli objekt je neupravitelný, ale jeho vlastnosti jsou upravitelné`,
-        desc: 'Zjistí jestli objekt nebo jeho vlastnosti jsou neupravitelné (sealed).',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc:
+          'Zjistí jestli objekt nebo jeho vlastnosti jsou neupravitelné (sealed).',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',

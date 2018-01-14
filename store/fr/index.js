@@ -4,7 +4,7 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: "créer un nouvel objet",
+        shortDesc: 'créer un nouvel objet',
         desc: `Crée un nouvel objet avec un prototype et des propriétés spécifiques.<br>
           <br>
           <strong>Remarque importante pour les débutants !</strong> Il est plus courant de créer un objet de la façon donnée en exemple en haut, en l'assignant à une variable.`,
@@ -19,8 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: "faire une copie d'un objet",
-        desc:
-          `Copie les valeurs de toutes les propriétés énumérables d'un ou plusieurs objet(s) vers un objet cible, qui sera retourné.`,
+        desc: `Copie les valeurs de toutes les propriétés énumérables d'un ou plusieurs objet(s) vers un objet cible, qui sera retourné.`,
         example: `const copie = Object.assign({}, obj);<br>
         console.log(copie);`,
         output: `Object {<br>
@@ -33,7 +32,7 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: "une nouvelle propriété ou modifier une propriété existante",
+        shortDesc: 'une nouvelle propriété ou modifier une propriété existante',
         desc: `Ajoute une propriété à un objet ou modifie une propiété existante.<br>
           <br>
           <strong>Remarque importante pour les débutants !</strong> Il est plus courant d'utiliser les notations avec point ou crochets pour créer une nouvelle propriété ou modifier une propriété existante, comme ceci : <code>obj.a = 1</code> ou <code>obj[a] = 1</code>.`,
@@ -49,7 +48,8 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: "une ou plusieurs propriétés ou modifier des propriétés existantes",
+        shortDesc:
+          'une ou plusieurs propriétés ou modifier des propriétés existantes',
         desc: `Ajoute une ou plusieurs propriétés à un objet ou modifie des propriétés existantes.<br>
           <br>
           <strong>Remarque importante pour les débutants !</strong> Il est plus courant d'utiliser les notations avec point ou crochets pour créer une nouvelle propriété ou modifier une propriété existante, comme ceci : <code>obj.a = 1</code> ou <code>obj[a] = 1</code>.`,
@@ -71,7 +71,7 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: "si plus de propriétés peuvent être ajoutées",
+        shortDesc: 'si plus de propriétés peuvent être ajoutées',
         desc: `Détermine si un objet est extensible (c'est-à-dire qu'on peut lui ajouter de nouvelles propriétés).`,
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
@@ -82,8 +82,7 @@ export default {
       {
         name: 'is',
         shortDesc: 'si deux références pointent vers le même objet',
-        desc:
-          `Vérifie que deux références pointent vers le même objet. Diffère des comparaisons abstraite (Abstract Equality Comparison) et stricte (Strict Equality Comparison). Celle-ci est un peu bizarre, et la documentation MDN est trompeuse.`,
+        desc: `Vérifie que deux références pointent vers le même objet. Diffère des comparaisons abstraite (Abstract Equality Comparison) et stricte (Strict Equality Comparison). Celle-ci est un peu bizarre, et la documentation MDN est trompeuse.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -109,14 +108,10 @@ export default {
         name: 'isSealed',
         shortDesc: `si un objet ne peut pas être modifié (mais ses propriétés oui)`,
         desc: `Détermine si un objet ou ses propriétés sont scellés : on ne peut ni ajouter ni retirer de propriétés, mais on peut modifier des propriétés existantes.`,
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -135,8 +130,7 @@ export default {
       {
         name: 'seal',
         shortDesc: `empêcher l'ajout ou la suppression de propriétés`,
-        desc:
-          `Scelle un objet, ce qui empêche l'ajout ou la suppression de propriétés. Les propriétés existantes peuvent toujours être modifiées.`,
+        desc: `Scelle un objet, ce qui empêche l'ajout ou la suppression de propriétés. Les propriétés existantes peuvent toujours être modifiées.`,
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
@@ -191,8 +185,7 @@ export default {
         {
           name: 'getOwnPropertyDescriptor',
           shortDesc: `des détails sur une propriété`,
-          desc:
-            `Renvoie un descripteur de la propriété propre d'un objet (c'est-à-dire une propriété directement présente et pas héritée via la chaîne de prototypes).`,
+          desc: `Renvoie un descripteur de la propriété propre d'un objet (c'est-à-dire une propriété directement présente et pas héritée via la chaîne de prototypes).`,
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -206,8 +199,7 @@ export default {
         {
           name: 'getOwnPropertyDescriptors',
           shortDesc: `des détails sur toutes les propritétés d'un objet`,
-          desc:
-            `Retourne un objet contenant les descripteurs de toutes les propriétés d'un objet.`,
+          desc: `Retourne un objet contenant les descripteurs de toutes les propriétés d'un objet.`,
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -242,8 +234,7 @@ export default {
         {
           name: 'hasOwnProperty',
           shortDesc: `si une propriété existe comme propriété directe d'un objet`,
-          desc:
-            `Retourne une booléen indiquant si un objet contient une propriété directe et non pas héritée d'une chaîne de prototypes.`,
+          desc: `Retourne une booléen indiquant si un objet contient une propriété directe et non pas héritée d'une chaîne de prototypes.`,
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
