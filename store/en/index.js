@@ -81,8 +81,7 @@ export default {
       {
         name: 'is',
         shortDesc: 'if two references point to the same object',
-        desc:
-          'Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading.',
+        desc: `Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading. It's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">more useful to use triple equals <code>===</code></a> to check equality`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
