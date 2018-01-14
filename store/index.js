@@ -3,16 +3,34 @@ import Vuex from 'vuex'
 import vuexI18n from 'vuex-i18n'
 
 // import languages (only state translations)
+import de from './de/index'
 import en from './en/index'
-import zh_cn from './zh_cn/index'
+import bg from './bg/index'
+import cz from './cz/index'
+import es from './es/index'
+import it from './it/index'
 import nl from './nl/index'
-import PTpt from './pt-pt/index'
+import ru from './ru/index'
+import pt_pt from './pt_pt/index'
+import zh_cn from './zh_cn/index'
+import zh_hk from './zh_hk/index'
+import fr from './fr/index'
+import id from './id/index'
 
 // import translations of labels
+import translationsDe from '../src/locale/de/index'
 import translationsEn from '../src/locale/en/index'
-import translationsZhCn from '../src/locale/zh_cn/index'
+import translationsBg from '../src/locale/bg/index'
+import translationsCz from '../src/locale/cz/index'
+import translationsEs from '../src/locale/es/index'
+import translationsIt from '../src/locale/it/index'
 import translationsNl from '../src/locale/nl/index'
-import translationsPTpt from '../src/locale/pt-pt/index'
+import translationsRU from '../src/locale/ru/index'
+import translationsPtPt from '../src/locale/pt_pt/index'
+import translationsZhCn from '../src/locale/zh_cn/index'
+import translationsZhHk from '../src/locale/zh_hk/index'
+import translationsFr from '../src/locale/fr/index'
+import translationsId from '../src/locale/id/index'
 
 // create info about languages
 const languages = (ctx => {
@@ -50,10 +68,19 @@ const mutations = {
 export const store = new Vuex.Store({
   modules: {
     en,
+    bg,
+    cz,
+    de,
+    es,
+    it,
     nl,
-    'pt-pt': PTpt,
+    ru,
+    pt_pt,
     zh_cn,
-    nl
+    fr,
+    id,
+    zh_hk,
+    fr
   },
   state: {
     selectedMethod: undefined,
@@ -66,10 +93,19 @@ export const store = new Vuex.Store({
 Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
+Vue.i18n.add('bg', translationsBg)
+Vue.i18n.add('de', translationsDe)
 Vue.i18n.add('en', translationsEn)
-Vue.i18n.add('zh_cn', translationsZhCn)
+Vue.i18n.add('cz', translationsCz)
+Vue.i18n.add('es', translationsEs)
+Vue.i18n.add('it', translationsIt)
 Vue.i18n.add('nl', translationsNl)
-Vue.i18n.add('pt-pt', translationsPTpt)
+Vue.i18n.add('ru', translationsRU)
+Vue.i18n.add('pt-pt', translationsPtPt)
+Vue.i18n.add('zh_cn', translationsZhCn)
+Vue.i18n.add('zh_hk', translationsZhHk)
+Vue.i18n.add('fr', translationsFr)
+Vue.i18n.add('id', translationsId)
 
 Vue.i18n.set(store.state.curLanguage)
 

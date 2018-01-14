@@ -4,10 +4,10 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'cria um novo objecto',
-        desc: `Cria um novo objecto com o objecto e propriedades do protótipo especificado.<br>
+        shortDesc: 'créer un nouvel objet',
+        desc: `Crée un nouvel objet avec un prototype et des propriétés spécifiques.<br>
           <br>
-          <strong>Nota importante para iniciantes!</strong> È mais comum criar um objecto da maneira demonstrada na parte de cima do exemplo, assim. <code>let obj = { a: 1 };</code>`,
+          <strong>Remarque importante pour les débutants !</strong> Il est plus courant de créer un objet de la façon donnée en exemple en haut, en l'assignant à une variable.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,11 +18,10 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'fazer uma cópia do objecto',
-        desc:
-          'Copia os valores de todas as propriedades de um ou mais objectos para um objecto novo. Retorna esse novo objecto. Enquanto tecnicamente não é um método nativo de objectos, é mais comum usar o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a> em ES6 com <code>...</code>',
-        example: `const copy = Object.assign({}, obj);<br>
-        console.log(copy);`,
+        shortDesc: "faire une copie d'un objet",
+        desc: `Copie les valeurs de toutes les propriétés énumérables d'un ou plusieurs objet(s) vers un objet cible, qui sera retourné.`,
+        example: `const copie = Object.assign({}, obj);<br>
+        console.log(copie);`,
         output: `Object {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -33,10 +32,10 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: 'uma nova propriadade ou mudar uma existente',
-        desc: `Adiciona a propriadade descrita pelo descritor a um objecto<br>
+        shortDesc: 'une nouvelle propriété ou modifier une propriété existante',
+        desc: `Ajoute une propriété à un objet ou modifie une propiété existante.<br>
           <br>
-          <strong>Nota importante para iniciantes!</strong> È mais comum usar pontos finais ou parênteses rectos para criar uma nova propriadade num objecto ou modificar uma ja existente.  Assim: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Mas tecnicamente isto não é um metodo incluido nos objectos por isso nao esta incluido`,
+          <strong>Remarque importante pour les débutants !</strong> Il est plus courant d'utiliser les notations avec point ou crochets pour créer une nouvelle propriété ou modifier une propriété existante, comme ceci : <code>obj.a = 1</code> ou <code>obj[a] = 1</code>.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -49,10 +48,11 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'uma ou mais novas propriedades ou mudar uma ou mais propriedades existentes',
-        desc: `Adiciona uma ou mais propriedades descritas pelo descritor a um objecto<br>
+        shortDesc:
+          'une ou plusieurs propriétés ou modifier des propriétés existantes',
+        desc: `Ajoute une ou plusieurs propriétés à un objet ou modifie des propriétés existantes.<br>
           <br>
-          <strong>Nota importante para iniciantes!</strong> È mais comum usar pontos finais ou parênteses rectos para criar uma nova propriadade num objecto ou modificar uma ja existente.  Assim: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Mas tecnicamente isto não é um metodo incluido nos objectos por isso nao esta incluido`,
+          <strong>Remarque importante pour les débutants !</strong> Il est plus courant d'utiliser les notations avec point ou crochets pour créer une nouvelle propriété ou modifier une propriété existante, comme ceci : <code>obj.a = 1</code> ou <code>obj[a] = 1</code>.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -71,8 +71,8 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: 'se mais propriedades podem ser adicionadas',
-        desc: 'Determina se mais propriedades podem ser adicionadas a um objecto.',
+        shortDesc: 'si plus de propriétés peuvent être ajoutées',
+        desc: `Détermine si un objet est extensible (c'est-à-dire qu'on peut lui ajouter de nouvelles propriétés).`,
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -81,9 +81,8 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'se duas referências apontam para o mesmo obejcto',
-        desc:
-          'Compara duas refereências e vê se ambas apontam para o mesmo objecto. Iguala todos os valores NaN também. Esta é um bocado estranha e a documentação da Mozilla é um bocado enganadora. È mais util usar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">três iguais <code>===</code></a> para verificar isto.',
+        shortDesc: 'si deux références pointent vers le même objet',
+        desc: `Vérifie que deux références pointent vers le même objet. Diffère des comparaisons abstraite (Abstract Equality Comparison) et stricte (Strict Equality Comparison). Celle-ci est un peu bizarre, et la documentation MDN est trompeuse.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -97,8 +96,8 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `se um objecto e as suas propriedades não podem ser modificadas`,
-        desc: 'Determina se um objecto está congelado',
+        shortDesc: `si un objet et ses propriétés ne peuvent pas être modifiés`,
+        desc: `Détermine si un objet est gelé, c'est-à-dire si qu'on empêche d'ajouter de nouvelles propriétés, de supprimer ou d'éditer des propriétés existantes.`,
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -107,21 +106,17 @@ export default {
       },
       {
         name: 'isSealed',
-        shortDesc: `se um objecto não pode ser modificado (mas as suas propriedades podem)`,
-        desc: 'Determina se um objecto ou as suas propriedades estão seladas',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        shortDesc: `si un objet ne peut pas être modifié (mais ses propriétés oui)`,
+        desc: `Détermine si un objet ou ses propriétés sont scellés : on ne peut ni ajouter ni retirer de propriétés, mais on peut modifier des propriétés existantes.`,
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `se o objecto está na cadeia de protótipos.`,
-        desc: `Retorna verdadeiro ou falso dependendo de este método ser chamado ou não na cadeia de protótipos do objecto especificado.`,
+        shortDesc: `si l'objet est dans la chaîne de prototype.`,
+        desc: `Retourne un booléen indiquant si un objet fait partie de la chaîne de prototypes d'un autre objet.`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
@@ -134,29 +129,28 @@ export default {
     noChange: [
       {
         name: 'seal',
-        shortDesc: `definir que não se pode adicionar ou remover propriedades deste objecto`,
-        desc:
-          'Evita que outro código apague propriedades a um objecto. Propriedades já existentes podem ser modificadas normalmente.',
+        shortDesc: `empêcher l'ajout ou la suppression de propriétés`,
+        desc: `Scelle un objet, ce qui empêche l'ajout ou la suppression de propriétés. Les propriétés existantes peuvent toujours être modifiées.`,
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
         console.log(obj);`,
-        output: `{a: 1, b: 2, c: 3} // obj.c não foi apagado`
+        output: `{a: 1, b: 2, c: 3} // obj.c n'est pas supprimé`
       },
       {
         name: 'freeze',
-        shortDesc: `definir que não se pode adicionar, remover ou modificar propriedades deste objecto`,
-        desc: `Congela um objecto: outro código não pode apagar ou modificar as propriedades deste objecto.`,
+        shortDesc: `empêcher l'ajout, la suppression ou la modification de propriétés`,
+        desc: `Gèle un objet, ce qui empêche l'ajout, la suppression ou la modification de propriétés.`,
         example: `Object.freeze(obj);<br>
         obj.a = 10;<br>
         <br>
         console.log(obj.a);`,
-        output: `1 <span class="comment">// o valor nao mudou para 10</span>`
+        output: `1 <span class="comment">//the value didn't update to 10</span>`
       },
       {
         name: 'preventExtensions',
-        shortDesc: `definir que não se pode adicionar propriedades a este objecto.`,
-        desc: `Previne que se adicionem novas propriedades a um objecto. Continuas a poder apagar ou modificar as já existem.`,
+        shortDesc: `empêcher l'ajout de propriétés`,
+        desc: `Empêche l'extention d'un objet. Les propriétés peuvent être supprimées ou modifiées mais on ne peut pas en ajouter de nouvelles.`,
         example: `Object.preventExtensions(obj);<br>
         obj.d = 4;<br>
         <br>
@@ -167,8 +161,8 @@ export default {
     createString: [
       {
         name: 'toString',
-        shortDesc: `representação do objecto em texto.`,
-        desc: `O método <code>toString()</code> retorna a representação em texto do objecto. Apesar de este ser o método nativo de objectos é mais util usar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
+        shortDesc: `la représentation en chaîne de caractères d'un objet`,
+        desc: `La méthode <code>toString()</code> retourne une chaîne de caractère représentant l'objet.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -176,8 +170,8 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `representação do objecto em texto localizado.`,
-        desc: `O método <code>toLocaleString()</code> retorna a representação em texto localizado do objecto. Esté metodo é suposto retornar coisas diferentes em ocasiões diferentes. Por exemplo se tiveres uma data guardada este método vai te retornar um formato de data diferente dependendo da tua localização.`,
+        shortDesc: `la représentation en chaîne de caractères localisée d'un objet`,
+        desc: `La méthode <code>toLocaleString()</code> retourne une représentation en chaîne de caractères localisée d'un objet. Cette méthode utilise des objets dérivés permettant de personnaliser le comportement de la fonction, notamment en fonction de la locale.`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -190,8 +184,8 @@ export default {
       details: [
         {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `detalhes sobre uma propriedade`,
-          desc: 'Retorna a descrição e caracteristicas da propriedade passada á função.',
+          shortDesc: `des détails sur une propriété`,
+          desc: `Renvoie un descripteur de la propriété propre d'un objet (c'est-à-dire une propriété directement présente et pas héritée via la chaîne de prototypes).`,
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -204,9 +198,8 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `detalhes sobre todas as propriedades num objecto`,
-          desc:
-            'Retorna um objecto que contêm a descrião e caracteristicas de todas as propriedades de um objecto',
+          shortDesc: `des détails sur toutes les propritétés d'un objet`,
+          desc: `Retourne un objet contenant les descripteurs de toutes les propriétés d'un objet.`,
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -231,9 +224,8 @@ export default {
         },
         {
           name: 'propertyIsEnumerable',
-          shortDesc: `se um propriadade pode ser enumerada através de um for...in loop`,
-          desc:
-            'Retorna verdadeiro ou falso indicando se a propriadade interna do ECMAScript [[Enumerable]] está definida. Isto pode ser usado para ver se o objecto é algo da linguagem ou definido pelo utilizador porque propriedades definidas pela linguagem tendem a não ser enumeráveis.',
+          shortDesc: `si une propriété peut être parcourue par une boucle for...in`,
+          desc: `Retourne un booléen indiquant si l'attribut interne ECMAScript [[Enumerable]] est défini. Cela peut être utilisé pour savoir si une méthode est native ou non, car les propriétés natives ne sont générallement pas énumérables.`,
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
@@ -241,9 +233,8 @@ export default {
         },
         {
           name: 'hasOwnProperty',
-          shortDesc: `se uma propriadade existe num objecto `,
-          desc:
-            'Retorna verdadeiro ou falso dependendo se o objecto contêm a propriadade especificada como filho directo.',
+          shortDesc: `si une propriété existe comme propriété directe d'un objet`,
+          desc: `Retourne une booléen indiquant si un objet contient une propriété directe et non pas héritée d'une chaîne de prototypes.`,
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
@@ -254,30 +245,29 @@ export default {
       list: [
         {
           name: 'keys',
-          shortDesc: `keys`,
-          desc: `Retorna uma array com os nomes das keys que pode ser enumerada.`,
+          shortDesc: `propriétés`,
+          desc: `Retourne un tableau contenant les noms de toutes les propriétés d'un objet qui peuvent être parcourues.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `valores`,
-          desc: `Retorna uma array com os valores que pode ser enumerada.`,
+          shortDesc: `valeurs`,
+          desc: `Retourne un tableau contenant les noms de toutes les valeurs d'un objet qui peuvent être parcourues.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `keys e valores`,
-          desc:
-            'Retorna uma array com arrays e dentro de cada uma temos a key e o valor de uma das propriedades do objecto.',
+          shortDesc: `propriétés et valeurs`,
+          desc: `Retourne un tableau contenant les noms de toutes les paires propriété/valeur d'un objet qui peuvent être parcourues.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `keys, mesmo que não as consigas enumerar`,
-          desc: `Retorna uma array que contêem os nomes de todas as propriedades de um objecto mesmo que estas não sejam enumeráveis. Faz o mesmo que <code>Object.keys()</code>, devolvendo todas as keys de um objecto mas <code>getOwnPropertyNames()</code> inclui propriedades que nao podem ser enumeradas em loops.`,
+          shortDesc: `propriétés, même non-énumérables`,
+          desc: `Retourne un tableau contenant les noms de toutes les propriétés d'un objet, qu'elles soient énumérables ou non. Fait la même chose que <code>Object.keys()</code> (retourne les propriétés d'un objet), mais <code>getOwnPropertyNames()</code> inclut les propriétés non-énumérables.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -292,16 +282,16 @@ export default {
     prototype: [
       {
         name: 'getPrototypeOf',
-        shortDesc: `retornar o protótipo de um objecto.`,
-        desc: `Retorna o protótipo de um objecto especificado. (o valor da propriadade interna [[Prototype]]).`,
+        shortDesc: `obtenir un prototype de cet objet.`,
+        desc: `Retourne un protoype de l'objet spécifié, c'est-à-dire la valeur de la propriété interne [[Prototype]].`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
       },
       {
         name: 'setPrototypeOf',
-        shortDesc: `definir o protótipo do objecto.`,
-        desc: `Atenção: este método é muito lento. Usar com caução ou substituir por <code>Object.create()</code>. Define o protótipo (o valor da propriadade interna [[Prototype]]).`,
+        shortDesc: `définir un protoype de cet objet.`,
+        desc: `Attention : cette méthode est très lente. Utilisez avec précaution, ou remplacez par <code>Object.create()</code>. Définit le prototype, c'est-à-dire la propriété interne [[Prototype]].`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
@@ -313,8 +303,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `descobre se o objecto está na cadeia de prototipos.`,
-        desc: `Retorna verdadeiro ou falso indicando se o objecto que é usado neste método faz parte da cadeia de prototipos do objecto especificado.`,
+        shortDesc: `savoir si cet objet est dans la chaîne de prototypes.`,
+        desc: `Retourne un booléen indiquant si un objet fait partie de la chaîne de prototypes de l'objet spécifié.`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
@@ -324,4 +314,4 @@ export default {
       }
     ]
   }
-};
+}

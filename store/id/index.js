@@ -4,10 +4,10 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'een nieuw object aanmaken',
-        desc: `Maakt een nieuw object aan met het gekozen prototype object en properties.<br>
+        shortDesc: 'membuat sebuah objek baru',
+        desc: `Membuat sebuah objek baru dengan objek prototipe dan properti yang ditentukan.<br>
           <br>
-          <strong>Belangrijke opmerking voor beginners!</strong> Het is gewoonlijk om een object te maken op de manier die boveaan gebruikt wordt, door een object aan een variabele toe te wijzen.`,
+          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum untuk membuat objek adalah dengan cara yang ditunjukkan pada bagian atas dari contoh, yaitu menetapkannya pada sebuah variabel.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,9 +18,9 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'een kopie van een object maken',
+        shortDesc: 'membuat salinan dari sebuah objek',
         desc:
-          'Kopieert de waardes van alle eigen telbare properties van een of meerdere source objecten naar een aangewezen object. Het geeft het aangewezen object terug.',
+          'Menyalin seluruh nilai dari seluruh properti yang <em>enumerable</em> dari satu atau lebih objek sumber ke sebuah objek target. Metode ini akan mengembalikan objek target.',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -33,10 +33,11 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: 'een nieuwe property of het aanpassen van een bestaande',
-        desc: `Voegt een benoemde property, beschreven door een gegeven descriptor, toe aan een object .<br>
+        shortDesc:
+          'sebuah properti baru atau memodifikasi properti yang sudah ada',
+        desc: `Menambahkan properti yang diberikan oleh deskriptor ke sebuah objek.<br>
           <br>
-          <strong>Belangrijke opmerking voor beginners!</strong> Het is gebruikelijk om dot of square brackets notatie te gebruiken bij het aanmaken van een nieuwe of bij het bewerken van een bestaande property. Zoals: <code>obj.a = 1</code> of <code>obj[a] = 1</code>. Dit is technisch gezien geen ingebouwde methode, daarom staat dit ook niet beschreven.`,
+          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum adalah dengan menggunakan notasi dot atau kurung siku untuk membuat sebuah properti baru atau memodifikasi yang sudah ada. Seperti ini: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Secara teknis, ini bukanlah sebuah metode yang <em>built-in</em>, sehingga tidak diikutsertakan.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -50,10 +51,10 @@ export default {
       {
         name: 'defineProperties',
         shortDesc:
-          'een of meerdere properties of aanpassen van bestaande properties',
-        desc: `Voegt een of meerdere properties, beschreven door een gegeven descriptor, toe aan een object <br>
+          'satu atau lebih properti atau memodifikasi lebih dari satu properti yang sudah ada',
+        desc: `Menambahkan satu atau lebih properti yang dijelaskan oleh deskriptor yang diberikan ke sebuah objek.<br>
           <br>
-          <strong> Belangrijke opmerking voor beginners!</strong > Het is gebruikelijk om dot of square brackets notatie te gebruiken bij het aanmaken van een nieuwe of bij het bewerken van een bestaande property. Zoals: <code>obj.a = 1</code> of <code> obj[a] = 1</code>. Dit is technisch gezien geen ingebouwde methode, daarom staat dit ook niet beschreven.`,
+          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum adalah dengan menggunakan notasi dot atau kurung siku untuk membuat sebuah properti baru atau memodifikasi yang sudah ada. Seperti ini: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. Secara teknis, ini bukanlah sebuah metode yang <em>built-in</em>, sehingga tidak diikutsertakan.`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -72,8 +73,9 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: 'of er meer properties toegevoegd kunnen worden',
-        desc: 'Bepaald of uitbreiding van een object toegestaan is.',
+        shortDesc: 'apakah saya dapat menambahkan lebih banyak properti',
+        desc:
+          'Menentukan apakah melakukan ekstensi terhadap suatu objek diperbolehkan.',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -82,9 +84,9 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'of twee referenties naar hetzelfde object wijzen',
+        shortDesc: 'apakah dua titik referensi menunjuk ke objek yang sama',
         desc:
-          'Vergelijkt of twee referenties naar hetzelfde object wijzen. Het staat gelijk aan NaN waardes (Welke verschillen van zowel Abstract Equality Comparison en Strict Equality Comparison). Dit is een gekke, ook is de MDN documentatie een beetje misleidend.',
+          'Membandingkan apakah dua titik referensi menunjuk ke objek yang sama. Seluruh nilai NaN akan dianggap sama (di mana hal ini berbeda dari Abstract Equality Comparison dan Strict Equality Comparison). Metode ini agak sedikit aneh, dan dokumentasi MDN yang terkait agak sedikit menyesatkan.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -98,8 +100,9 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `of een object en de properties niet bewerkt kunnen worden`,
-        desc: 'Bepaald of een object bevroren is.',
+        shortDesc: `apakah sebuah objek dan properti-propertinya tidak dapat dimodifikasi`,
+        desc:
+          'Menentukan apakah sebuah objek merupakan objek yang beku (tidak dapat dimodifikasi).',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -108,8 +111,9 @@ export default {
       },
       {
         name: 'isSealed',
-        shortDesc: `of een object niet bewerkt kan worden (maar de properties wel)`,
-        desc: 'Bepaald of een object of de properties zijn afgesloten.',
+        shortDesc: `apakah sebuah objek tidak dapat dimodifikasi (meskipun properti-properti terkait bisa dimodifikasi)`,
+        desc:
+          'Menentukan apakah sebuah objek dan properti-propertinya disegel (<em>sealed</em>).',
         example: `Object.seal(obj);<br>
         <br>
         console.log(Object.isSealed(obj));`,
@@ -117,8 +121,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `of een object onder een prototype valt`,
-        desc: `Geeft een boolean terug die aangeeft of de object die in de methode aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
+        shortDesc: `apakah objek tersebut merupakan bagian dari sebuah rantai prototipe`,
+        desc: `Mengembalikan sebuah boolean yang mengindikasikan apakah objek di mana metode ini dipanggil merupakan bagian dari rantai prototipe (<em>prototype chain</em>) objek yang ditentukan.`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
@@ -131,29 +135,29 @@ export default {
     noChange: [
       {
         name: 'seal',
-        shortDesc: `zeker weten dat properties niet toegevoegd of verwijderd kunnen worden`,
+        shortDesc: `memastikan bahwa properti-properti tidak dapat ditambah atau dihapus`,
         desc:
-          'Voorkomt dat andere code properties van een object kan verwijderen. Bestaande properties kunnen nog steeds bewerkt worden.',
+          'Menghindari kode lain untuk menghapus properti-properti dari sebuah objek. Properti yang sudah ada sekarang masih dapat dimodifikasi.',
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
         console.log(obj);`,
-        output: `{a: 1, b: 2, c: 3} // obj.c doesn't get deleted`
+        output: `{a: 1, b: 2, c: 3} // obj.c tidak dapat dihapus`
       },
       {
         name: 'freeze',
-        shortDesc: `zeker weten dat properties niet toegevoegd, verwijderd of bewerkt kunnen worden`,
-        desc: `Bevriesd een object: andere code kan geen properties bewerken of verwijderen.`,
+        shortDesc: `memastikan bahwa properti-properti tidak dapat ditambah, dihapus, atau dimodifikasi`,
+        desc: `Membekukan sebuah objek: kode lain tidak dapat menghapus atau mengubah properti apapun.`,
         example: `Object.freeze(obj);<br>
         obj.a = 10;<br>
         <br>
         console.log(obj.a);`,
-        output: `1 <span class="comment">//the value didn't update to 10</span>`
+        output: `1 <span class="comment">//nilai tidak diubah menjadi 10</span>`
       },
       {
         name: 'preventExtensions',
-        shortDesc: `zeker weten dat properties niet toegevoegd kunnen worden`,
-        desc: `Voorkomt uitbreiding van een object. Ik kan nog steeds properties verwijderen maar ik kan geen nieuwe toevoegen.`,
+        shortDesc: `memastikan bahwa properti-properti tidak dapat ditambah`,
+        desc: `Menghindari ekstensi dari sebuah objek. Properti-properti tetap dapat dihapus, namun tidak bisa ditambah.`,
         example: `Object.preventExtensions(obj);<br>
         obj.d = 4;<br>
         <br>
@@ -164,8 +168,8 @@ export default {
     createString: [
       {
         name: 'toString',
-        shortDesc: `een object in de vorm van een string`,
-        desc: `de <code>toString()</code> methode rgeeft een object terug in de vorm van een string.`,
+        shortDesc: `representasi string dari sebuah objek`,
+        desc: `Metode <code>toString()</code> mengembalikan sebuah string yang merepresentasikan objek tersebut.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -173,8 +177,8 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `een object in de vorm van een taalstring`,
-        desc: `De <code>toLocaleString()</code> methode geeft een object terug in de vorm van een string. Deze methode is bedoeld om overschreven te worden bij een afgeleid object voor taal-specifieke doeleinde. In mensen taal: dit betekent dat als je iets hebt dat andere data heeft op basis van locatie, zoals een data methode, het jou een ander tijd format geeft.`,
+        shortDesc: `representasi string yang telah dilokalisasi dari sebuah objek`,
+        desc: `Metode <code>toLocaleString()</code> representasi string yang telah dilokalisasi dari sebuah objek. Metode ini dimaksudkan untuk di-<em>override</em> oleh objek turunan untuk tujuan yang spesifik pada lokal. Dalam bahasa manusia: ini berarti bahwa apabila Anda mempunyai sesuatu yang memiliki data berbeda berdasarkan lokasi, seperti metode tanggal, maka metode ini akan memberikan Anda format waktu yang berbeda`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -187,9 +191,9 @@ export default {
       details: [
         {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `details over een property`,
+          shortDesc: `detil-detil terkait sebuah properti`,
           desc:
-            'Geeft een property descriptor voor een benoemde property van een object.',
+            'Mengembalikan sebuah deskriptor properti untuk sebuah properti yang diberikan pada sebuah objek.',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -202,9 +206,9 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `details over alle properties van een object`,
+          shortDesc: `detil-detil mengenai seluruh properti pada sebuah objek`,
           desc:
-            'Geeft een object terug bestaande uit alle eigen property descriptors van een object',
+            'Mengembalikan sebuah objek yang berisi seluruh deskriptor properti untuk sebuah objek.',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -229,9 +233,9 @@ export default {
         },
         {
           name: 'propertyIsEnumerable',
-          shortDesc: `of een property doorlopen kan worden met een for...in loop `,
+          shortDesc: `apakah sebuah properti dapat dilintasi dengan sebuah for...in loop`,
           desc:
-            'Geeft een boolean terug die aangeeft of de interne ECMAScript [[Enumerable]] attribute actief is. Dit kan gebruikt worden of iets een standaard methode is of een gebruikers methode is, omdat standaard properties normaal gesproken niet telbaar zijn.',
+            'Mengembalikan sebuah boolean yang mengindikasikan apakah atribut internal ECMAScript [[Enumerable]] ditentukan. Metode ini dapat digunakan untuk melihat apakah suatu metode merupakan metode <em>built-in</em> atau <em>user-defined</em>, karena properti-properti <em>built-in</em> cenderung tidak <em>enumerable</em>.',
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
@@ -239,9 +243,9 @@ export default {
         },
         {
           name: 'hasOwnProperty',
-          shortDesc: `of een property bestaat als een directe property van het object`,
+          shortDesc: `apakah sebuah properti ada sebagai properti langsung dari sebuah objek`,
           desc:
-            'Geeft een boolean terug die aangeeft of een object bestaat uit een specifieke property als een directe property van dat object en dus niet geërfd is van de overkoepelende prototype.',
+            'Mengembalikan sebuah boolean yang mengindikasikan apakah sebuah objek mengandung properti yang ditentukan sebagai suatu properti langsung dari objek tersebut dan tidak diwariskan melalui rantai prototipe (<em>prototype chain</em>).',
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
@@ -252,29 +256,29 @@ export default {
       list: [
         {
           name: 'keys',
-          shortDesc: `sleutels`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object sleutels waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `kunci`,
+          desc: `Mengembalikan sebuah array yang berisi nama-nama dari seluruh kunci milik objek yang dapat ditelusuri, dalam urutan ketika kunci-kunci tersebut ditelusuri.`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `waardes`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object waardes waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `nilai`,
+          desc: `Mengembalikan sebuah array yang berisi nama-nama dari seluruh nilai milik objek yang dapat ditelusuri, dalam urutan ketika nilai-nilai tersebut ditelusuri.`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `sleutels en waardes`,
-          desc: `Geeft een genestelde array terug bestaande uit alle namen van alle object sleutel/waarde paren waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `kunci dan nilai`,
+          desc: `Mengembalikan sebuah nested array berisi nama-nama seluruh pasangan kunci/nilai dari objek yang dapat ditelusuri, dalam urutan ketika pasangan-pasangan tersebut ditelusuri.`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `sleutels, ookal kan je er niet doorheen loopen`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object properties, zowel telbaar als niet telbaar. Doet het zelfde als <code>Object.keys()</code>, verkrijgen van de sleutels in het object, maar <code>getOwnPropertyNames()</code> bevat ook properties waar niet doorheen gelooped kan worden.`,
+          shortDesc: `kunci, meskipun Anda tidak dapat menelusuri kunci-kunci tersebut`,
+          desc: `Mengembalikan sebuah array berisi nama-nama seluruh properti objek yang diberikan yang bersifat <em>enumerable</em> maupun <em>non-enumerable</em>. Metode ini melakukan hal yang sama seperti <code>Object.keys()</code>, yaitu mengambil seluruh kunci-kunci di objek, namun <code>getOwnPropertyNames()</code> juga mengikutsertakan properti-properti yang tidak bisa ditelusuri.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -289,16 +293,16 @@ export default {
     prototype: [
       {
         name: 'getPrototypeOf',
-        shortDesc: `een prototype van een object verkrijgen`,
-        desc: `Geeft de prototype terug van het gespecificeerde object. Dat is de waarde van de interne [[Prototype]] property van het gespecificeerde object.`,
+        shortDesc: `mendapatkan sebuah prototipe dari objek`,
+        desc: `Mengembalikan prototipe dari objek yang ditentukan (nilai dari properti internal [[Prototype]]) dari objek yang ditentukan).`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
       },
       {
         name: 'setPrototypeOf',
-        shortDesc: `een prototype voor het object toewijzen`,
-        desc: `Waarschuwing: deze methode is erg sloom. Gebruik dit voorzichtig, of vervang door <code>Object.create()</code>. Het wijst een prototype (dat is de interne[[Prototype]] property) toe.`,
+        shortDesc: `menentukan prototipe dari objek`,
+        desc: `Peringatan: metode ini sangatlah. Gunakan dengan hati-hati, atau ganti dengan  <code>Object.create()</code>. Metode ini menentukan the prototipe (properti internal [[Prototype]]).`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
@@ -310,8 +314,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `uitzoeken of een object onder een prototype valt`,
-        desc: `Geeft een boolean terug die aangeeft of het object van deze methode die aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
+        shortDesc: `menemukan apakah sebuah objek ada pada rantai prototipe`,
+        desc: `Mengembalikan sebuah boolean yang mengindikasikan apakah objek di mana metode ini dipanggil ada pada sebuah rantai prototipe (<em>prototype chain</em>) dari objek yang ditentukan.`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>

@@ -6,7 +6,7 @@ export default {
         shortDesc: 'crear un nuevo objeto',
         desc: `Crea un nuevo objeto con el objeto y propiedades del prototipo especificado.<br>
           <br>
-          <strong>Nota importante para los principiantes! </strong> Es más común crear un objeto de la manera que se muestra en la parte superior del ejemplo, asignándolo a una variable.`,
+          <strong>¡Nota importante para los principiantes! </strong> Es más común crear un objeto de la manera que se muestra en la parte superior del ejemplo, asignándolo a una variable.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -33,7 +33,7 @@ export default {
         shortDesc: 'una nueva propiedad o modificar una existente',
         desc: `Define una nueva propiedad sobre un objeto, o modifica una ya existente, y devuelve el objeto modificado.<br>
           <br>
-          <strong>Nota importante para los principiantes! </strong> Es más común usar notación de punto o de corchete para crear una nueva propiedad o modificar una existente. Así: <code>obj.a = 1</code> o <code>obj[a] = 1</code>. Esto no es técnicamente un método incorporado, por eso no está incluido.`,
+          <strong>¡Nota importante para los principiantes! </strong> Es más común usar notación de punto o de corchete para crear una nueva propiedad o modificar una existente. Así: <code>obj.a = 1</code> o <code>obj[a] = 1</code>. Esto no es técnicamente un método incorporado, por eso no está incluido.`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -47,7 +47,7 @@ export default {
       {
         name: 'defineProperties',
         shortDesc: 'una o mas propiedades o modificar propiedades existentes',
-        desc: `Add una o mas propiedades o modifica propiedades existentes directamente en el objeto, returnando el objeto.<br>
+        desc: `Añade una o mas propiedades o modifica propiedades existentes directamente en el objeto, retornando el objeto.<br>
           <br>
           <strong>Nota importante para los principiantes! </strong> Es más común utilizar notación de punto o de corchete para crear una nueva propiedad o modificar una existente. Así: <code>obj.a = 1</code> o <code>obj[a] = 1</code>. Técnicamente no es un método incorporado, por eso no está incluido.`,
         example: `Object.defineProperties(obj, {<br>
@@ -103,15 +103,11 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `si un objeto no puede ser modificado (aunque sus propiedades pueden serlo)`,
-        desc: 'Determina si un objeto o sus propiedades están sellados.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc: 'Determina si el descriptor de sus propiedades no se puede cambiar y no se pueden crear nuevas propiedades.',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',

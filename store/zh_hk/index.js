@@ -4,10 +4,10 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'een nieuw object aanmaken',
-        desc: `Maakt een nieuw object aan met het gekozen prototype object en properties.<br>
+        shortDesc: '建立一個新的物件',
+        desc: `建立一個帶有指定原型和屬性的新物件。<br>
           <br>
-          <strong>Belangrijke opmerking voor beginners!</strong> Het is gewoonlijk om een object te maken op de manier die boveaan gebruikt wordt, door een object aan een variabele toe te wijzen.`,
+          <strong>初學者請注意！</strong> 一般來說建立一個物件就像上方例子那樣直接賦予變數一個值。`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,9 +18,9 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'een kopie van een object maken',
+        shortDesc: '建立一個物件複本',
         desc:
-          'Kopieert de waardes van alle eigen telbare properties van een of meerdere source objecten naar een aangewezen object. Het geeft het aangewezen object terug.',
+          '複製一個或多個物件自身所有可數的屬性到另一個目標物件。回傳的值為該目標物件。',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -33,10 +33,10 @@ export default {
     createProp: [
       {
         name: 'defineProperty',
-        shortDesc: 'een nieuwe property of het aanpassen van een bestaande',
-        desc: `Voegt een benoemde property, beschreven door een gegeven descriptor, toe aan een object .<br>
+        shortDesc: '定義一個新屬性或修改一個現有的屬性',
+        desc: `直接對一個物件定義一個屬性，或是修改現有的屬性。<br>
           <br>
-          <strong>Belangrijke opmerking voor beginners!</strong> Het is gebruikelijk om dot of square brackets notatie te gebruiken bij het aanmaken van een nieuwe of bij het bewerken van een bestaande property. Zoals: <code>obj.a = 1</code> of <code>obj[a] = 1</code>. Dit is technisch gezien geen ingebouwde methode, daarom staat dit ook niet beschreven.`,
+          <strong>初學者請注意！</strong> 常見的做法是使用小數點或方括號來定義一個新屬性或修改現有屬性。範例：<code>obj.a = 1</code> 或 <code>obj[a] = 1</code>。從技術上來說這不是一個內置的函數，所以不包括在內。`,
         example: `Object.defineProperty(obj, 'd', {<br>
         <span>&nbsp;&nbsp;</span>enumerable: true,<br>
         <span>&nbsp;&nbsp;</span>configurable: true,<br>
@@ -49,11 +49,10 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc:
-          'een of meerdere properties of aanpassen van bestaande properties',
-        desc: `Voegt een of meerdere properties, beschreven door een gegeven descriptor, toe aan een object <br>
+        shortDesc: '定義一個或多個新屬性或修改一個或多個現有的屬性',
+        desc: `直接對一個物件定義一個或多個屬性，或是修改現有的屬性。<br>
           <br>
-          <strong> Belangrijke opmerking voor beginners!</strong > Het is gebruikelijk om dot of square brackets notatie te gebruiken bij het aanmaken van een nieuwe of bij het bewerken van een bestaande property. Zoals: <code>obj.a = 1</code> of <code> obj[a] = 1</code>. Dit is technisch gezien geen ingebouwde methode, daarom staat dit ook niet beschreven.`,
+          <strong>初學者請注意！</strong> 常見的做法是使用小數點或方括號來定義一個新屬性或修改現有屬性。範例：<code>obj.a = 1</code> 或 <code>obj[a] = 1</code>。從技術上來說這不是一個內置的函數，所以不包括在內。`,
         example: `Object.defineProperties(obj, {<br>
         <span>&nbsp;&nbsp;</span>d: {<br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,<br>
@@ -72,8 +71,8 @@ export default {
     infoObj: [
       {
         name: 'isExtensible',
-        shortDesc: 'of er meer properties toegevoegd kunnen worden',
-        desc: 'Bepaald of uitbreiding van een object toegestaan is.',
+        shortDesc: '是否可以添加更多的屬性',
+        desc: '檢查是否允許擴展物件。',
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -82,9 +81,9 @@ export default {
       },
       {
         name: 'is',
-        shortDesc: 'of twee referenties naar hetzelfde object wijzen',
+        shortDesc: '兩個引用是否指向同一物件',
         desc:
-          'Vergelijkt of twee referenties naar hetzelfde object wijzen. Het staat gelijk aan NaN waardes (Welke verschillen van zowel Abstract Equality Comparison en Strict Equality Comparison). Dit is een gekke, ook is de MDN documentatie een beetje misleidend.',
+          '對比兩個引用是否指向同一物件。NaN 與 NaN 比較會返回 true (與抽像相等比較和嚴格相等比較不同)（譯者註：「抽像相等比較」就是將型別一致化後比較，即“==”；「嚴格相等比較」則會比較兩個值和型別，即“===”）。這個有點奇怪，MDN 文檔有點誤導。',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -98,8 +97,8 @@ export default {
       },
       {
         name: 'isFrozen',
-        shortDesc: `of een object en de properties niet bewerkt kunnen worden`,
-        desc: 'Bepaald of een object bevroren is.',
+        shortDesc: `物件及其屬性是否不能被修改`,
+        desc: '檢查一個物件是否被凍結。',
         example: `console.log(Object.isFrozen(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isFrozen(obj));`,
@@ -108,8 +107,8 @@ export default {
       },
       {
         name: 'isSealed',
-        shortDesc: `of een object niet bewerkt kan worden (maar de properties wel)`,
-        desc: 'Bepaald of een object of de properties zijn afgesloten.',
+        shortDesc: `一個物件是否不能被修改（但屬性可以）`,
+        desc: '檢查一個物件及其屬性是否被封存。',
         example: `Object.seal(obj);<br>
         <br>
         console.log(Object.isSealed(obj));`,
@@ -117,8 +116,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `of een object onder een prototype valt`,
-        desc: `Geeft een boolean terug die aangeeft of de object die in de methode aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
+        shortDesc: `物件是否在原型鏈裡`,
+        desc: `返回表示一個物件是否在另一指定物件的原型鏈上的布林值。`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
@@ -131,9 +130,8 @@ export default {
     noChange: [
       {
         name: 'seal',
-        shortDesc: `zeker weten dat properties niet toegevoegd of verwijderd kunnen worden`,
-        desc:
-          'Voorkomt dat andere code properties van een object kan verwijderen. Bestaande properties kunnen nog steeds bewerkt worden.',
+        shortDesc: `讓它不能添加或刪除屬性`,
+        desc: '阻止刪除一個物件的屬性。現有的屬性仍然能被修改。',
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
@@ -142,8 +140,8 @@ export default {
       },
       {
         name: 'freeze',
-        shortDesc: `zeker weten dat properties niet toegevoegd, verwijderd of bewerkt kunnen worden`,
-        desc: `Bevriesd een object: andere code kan geen properties bewerken of verwijderen.`,
+        shortDesc: `讓它不能添加、刪除或修改屬性`,
+        desc: `凍結一個物件，使得它的屬性不能被更改或刪除。`,
         example: `Object.freeze(obj);<br>
         obj.a = 10;<br>
         <br>
@@ -152,8 +150,8 @@ export default {
       },
       {
         name: 'preventExtensions',
-        shortDesc: `zeker weten dat properties niet toegevoegd kunnen worden`,
-        desc: `Voorkomt uitbreiding van een object. Ik kan nog steeds properties verwijderen maar ik kan geen nieuwe toevoegen.`,
+        shortDesc: `讓它不能添加屬性`,
+        desc: `阻止物件的擴展。仍然可以刪除屬性但不能添加屬性。`,
         example: `Object.preventExtensions(obj);<br>
         obj.d = 4;<br>
         <br>
@@ -164,8 +162,8 @@ export default {
     createString: [
       {
         name: 'toString',
-        shortDesc: `een object in de vorm van een string`,
-        desc: `de <code>toString()</code> methode rgeeft een object terug in de vorm van een string.`,
+        shortDesc: `表示這個物件的字符串`,
+        desc: `<code>toString()</code> 方法返回表示這個物件的字符串。`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -173,8 +171,8 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `een object in de vorm van een taalstring`,
-        desc: `De <code>toLocaleString()</code> methode geeft een object terug in de vorm van een string. Deze methode is bedoeld om overschreven te worden bij een afgeleid object voor taal-specifieke doeleinde. In mensen taal: dit betekent dat als je iets hebt dat andere data heeft op basis van locatie, zoals een data methode, het jou een ander tijd format geeft.`,
+        shortDesc: `表示這個物件的本地化的字符串`,
+        desc: `<code>toLocaleString()</code> 方法返回表示這個對象的字符串。這個方法可以根據按不同地域需要在派生物件中被重寫。例如：您有一些因地域不同而不同的數據，如日期的方法，您可以得到不同的時間格式。`,
         example: `obj.d = new Date();<br>
         <br>
         console.log(obj.d);<br>
@@ -187,9 +185,8 @@ export default {
       details: [
         {
           name: 'getOwnPropertyDescriptor',
-          shortDesc: `details over een property`,
-          desc:
-            'Geeft een property descriptor voor een benoemde property van een object.',
+          shortDesc: `關於屬性的詳細信息`,
+          desc: '返回一個物件上已命名的屬性的屬性描述器。',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -202,9 +199,8 @@ export default {
         },
         {
           name: 'getOwnPropertyDescriptors',
-          shortDesc: `details over alle properties van een object`,
-          desc:
-            'Geeft een object terug bestaande uit alle eigen property descriptors van een object',
+          shortDesc: `一個物件上所有屬性的詳細信息`,
+          desc: '返回一個包含物件上所有屬性描述器的物件。',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -229,9 +225,9 @@ export default {
         },
         {
           name: 'propertyIsEnumerable',
-          shortDesc: `of een property doorlopen kan worden met een for...in loop `,
+          shortDesc: `一個屬性是否可以在 for...in 循環中遍歷`,
           desc:
-            'Geeft een boolean terug die aangeeft of de interne ECMAScript [[Enumerable]] attribute actief is. Dit kan gebruikt worden of iets een standaard methode is of een gebruikers methode is, omdat standaard properties normaal gesproken niet telbaar zijn.',
+            '返回表示內部的 ECMAScript [[Enumerable]] 屬性是否已設置的布林值。這個可以用來檢查一個方法是內置的還是用戶定義的，因為內置屬性更偏向於不可被枚舉。',
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>
@@ -239,9 +235,9 @@ export default {
         },
         {
           name: 'hasOwnProperty',
-          shortDesc: `of een property bestaat als een directe property van het object`,
+          shortDesc: `一個屬性是否直接存在於物件上`,
           desc:
-            'Geeft een boolean terug die aangeeft of een object bestaat uit een specifieke property als een directe property van dat object en dus niet geërfd is van de overkoepelende prototype.',
+            '返回表示物件是否包含指定屬性並且直接存在於物件上而不是通過原型鏈繼承得到。',
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,
@@ -252,29 +248,29 @@ export default {
       list: [
         {
           name: 'keys',
-          shortDesc: `sleutels`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object sleutels waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `鍵`,
+          desc: `返回包含物件上所有可被循環的鍵的名稱的數組，並按照它們被循環的順序來排序。`,
           example: `console.log(Object.keys(obj));`,
           output: `["a", "b", "c"]`
         },
         {
           name: 'values',
-          shortDesc: `waardes`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object waardes waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `值`,
+          desc: `返回包含物件上所有可被循環的值的數組，並按照它們被循環的順序來排序。`,
           example: `console.log(Object.values(obj));`,
           output: `[1, 2, 3]`
         },
         {
           name: 'entries',
-          shortDesc: `sleutels en waardes`,
-          desc: `Geeft een genestelde array terug bestaande uit alle namen van alle object sleutel/waarde paren waar doorheen gelooped kan worden, in de volgorde dat deze doorgeloopt zou worden.`,
+          shortDesc: `鍵和值`,
+          desc: `返回包含物件上所有可被循環的鍵值對的嵌套數組，並按照它們被循環的順序來排序。`,
           example: `console.log(Object.entries(obj));`,
           output: `[["a", 1], ["b", 2], ["c", 3]]`
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `sleutels, ookal kan je er niet doorheen loopen`,
-          desc: `Geeft een array terug bestaande uit alle namen van alle object properties, zowel telbaar als niet telbaar. Doet het zelfde als <code>Object.keys()</code>, verkrijgen van de sleutels in het object, maar <code>getOwnPropertyNames()</code> bevat ook properties waar niet doorheen gelooped kan worden.`,
+          shortDesc: `鍵，即使您不能循環它們`,
+          desc: `返回包含物件上所有可枚舉和不可枚舉的屬性的名稱的數組，跟 <code>Object.keys()</code> 一樣，可以得到物件的鍵，但 <code>getOwnPropertyNames()</code> 會包含不能通過循環來得到的屬性。`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
           });<br>
@@ -289,16 +285,16 @@ export default {
     prototype: [
       {
         name: 'getPrototypeOf',
-        shortDesc: `een prototype van een object verkrijgen`,
-        desc: `Geeft de prototype terug van het gespecificeerde object. Dat is de waarde van de interne [[Prototype]] property van het gespecificeerde object.`,
+        shortDesc: `獲取物件的原型`,
+        desc: `返回指定物件的原型。 （例如指定物件的內部 [[Prototype]] 屬性的值）`,
         example: `const proto = Object.create(obj);<br>
         console.log(Object.getPrototypeOf(proto) === obj);`,
         output: `true`
       },
       {
         name: 'setPrototypeOf',
-        shortDesc: `een prototype voor het object toewijzen`,
-        desc: `Waarschuwing: deze methode is erg sloom. Gebruik dit voorzichtig, of vervang door <code>Object.create()</code>. Het wijst een prototype (dat is de interne[[Prototype]] property) toe.`,
+        shortDesc: `設置物件的原型`,
+        desc: `警告：這個方法真的很慢。使用時要小心，或者用 <code>Object.create()</code> 來代替設置原型（例如內部的 [[Prototype]] 屬性）。`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
@@ -310,8 +306,8 @@ export default {
       },
       {
         name: 'isPrototypeOf',
-        shortDesc: `uitzoeken of een object onder een prototype valt`,
-        desc: `Geeft een boolean terug die aangeeft of het object van deze methode die aangeroepen wordt onder de prototype valt van het gespecificeerde object.`,
+        shortDesc: `知道一個物件是否在原型鏈上`,
+        desc: `返回表示一個物件是否在另一指定物件的原型鏈上的布林值。`,
         example: `function Rect() {}<br>
         <br>
         var rect = new Rect();<br>
