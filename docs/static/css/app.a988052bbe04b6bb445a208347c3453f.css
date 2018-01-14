@@ -110,10 +110,10 @@ main {
 .usage {
   margin: 35px 0 0;
 }
-select[data-v-338ab544] {
+select[data-v-08cbd064] {
   margin-top: 8px;
 }
-.localization-dropdown[data-v-338ab544] {
+.localization-dropdown[data-v-08cbd064] {
   position: absolute;
   right: 8%;
   top: 35px;
@@ -161,20 +161,20 @@ p.desc code {
   padding: 3px 8px;
   border-radius: 3px;
 }
-div[data-v-152c572e] {
+div[data-v-7577fb80] {
   border: 1px solid #ccc;
   margin-top: 30px;
   padding: 0 20px;
   background: #fff;
   border-radius: 5px;
 }
-h2[data-v-152c572e] {
+h2[data-v-7577fb80] {
   color: #ce371a;
 }
-p.desc[data-v-152c572e] {
+p.desc[data-v-7577fb80] {
   margin-bottom: 0;
 }
-p.link[data-v-152c572e] {
+p.link[data-v-7577fb80] {
   margin-top: 5px;
 }
 .github-corner:hover .octo-arm[data-v-6ddd1c61] {
@@ -257,4 +257,4 @@ p.link[data-v-152c572e] {
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-/*# sourceMappingURL=app.9712f8d80493ca9e1681bb4488832509.css.map */
+/*# sourceMappingURL=app.a988052bbe04b6bb445a208347c3453f.css.map */
