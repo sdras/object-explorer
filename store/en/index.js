@@ -164,9 +164,11 @@ export default {
         shortDesc: `string representation of the object.`,
         desc: `The <code>toString()</code> method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
-        console.log(obj.a.toString());`,
+        console.log(obj.a.toString());<br>
+        console.log(JSON.stringify(obj));`,
         output: `"[object Object]"<br>
-        "1"`
+        "1"<br>
+        "{"a":1,"b":2,"c":3}"`
       },
       {
         name: 'toLocaleString',
