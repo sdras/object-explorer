@@ -7,7 +7,7 @@ export default {
         shortDesc: 'cria um novo objecto',
         desc: `Cria um novo objecto com o objecto e propriedades do protótipo especificado.<br>
           <br>
-          <strong>Nota importante para iniciantes!</strong> È mais comum criar um objecto da maneira demonstrada na parte de cima do exemplo, atribuindo-o a uma variável`,
+          <strong>Nota importante para iniciantes!</strong> È mais comum criar um objecto da maneira demonstrada na parte de cima do exemplo, assim. <code>let obj = { a: 1 };</code>`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -20,7 +20,7 @@ export default {
         name: 'assign',
         shortDesc: 'fazer uma cópia do objecto',
         desc:
-          'Copia os valores de todas as propriedades de um ou mais objectos para um objecto novo. Retorna esse novo objecto.',
+          'Copia os valores de todas as propriedades de um ou mais objectos para um objecto novo. Retorna esse novo objecto. Enquanto tecnicamente não é um método nativo de objectos, é mais comum usar o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a> em ES6 com <code>...</code>',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -85,7 +85,7 @@ export default {
         name: 'is',
         shortDesc: 'se duas referências apontam para o mesmo obejcto',
         desc:
-          'Compara duas refereências e vê se ambas apontam para o mesmo objecto. Iguala todos os valores NaN também. Esta é um bocado estranha e a documentação da Mozilla é um bocado enganadora.',
+          'Compara duas refereências e vê se ambas apontam para o mesmo objecto. Iguala todos os valores NaN também. Esta é um bocado estranha e a documentação da Mozilla é um bocado enganadora. È mais util usar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">três iguais <code>===</code></a> para verificar isto.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -166,7 +166,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `representação do objecto em texto.`,
-        desc: `O método <code>toString()</code> retorna a representação em texto do objecto.`,
+        desc: `O método <code>toString()</code> retorna a representação em texto do objecto. Apesar de este ser o método nativo de objectos é mais util usar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
