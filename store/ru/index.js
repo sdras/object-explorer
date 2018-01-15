@@ -7,7 +7,7 @@ export default {
         shortDesc: 'создать новый объект',
         desc: `Создает новый объект с указанным значением прототипа и свойствами объекта.<br>
           <br>
-          <strong>Важное замечание для начинающих!</strong> Более часто используемый путь создания объекта представлен в начале примера, способ назначения и запись в переменную объекта со значениями.`,
+          <strong>Важное замечание для начинающих!</strong> Более часто используемый путь создания объекта представлен в начале примера, например так <br><code>let obj = { a: 1 };</code>.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -19,8 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: 'сделать копию существующего объекта',
-        desc:
-          'Копирует значений всех собственных перечисляемых свойств из одного или более исходных объектов в целевой объект. После копирования он возвращает целевой объект.',
+        desc: `Копирует значений всех собственных перечисляемых свойств из одного или более исходных объектов в целевой объект. После копирования он возвращает целевой объект. Не смотря на то что <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Оператор расширения (Spread Operator)</a> не является встроеным методом объекта, чаще всего в es6 синтаксисе используют его, для использования достаточно написать <code>...</code>`,
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -84,7 +83,7 @@ export default {
         name: 'is',
         shortDesc: 'являются ли два значения одинаковыми значениями',
         desc:
-          'Сравнивает, если два значения указывают на один и тот же объект. Обозначает все значения NaN (которые отличаются как от сравнения абстрактного равенства, так и от строгого равенства). Это немного странно, и документация MDN вводит в заблуждение.',
+          `Сравнивает, если два значения указывают на один и тот же объект. Обозначает все значения NaN (которые отличаются как от сравнения абстрактного равенства, так и от строгого равенства). Это немного странно, и документация MDN вводит в заблуждение. Более правильный путь сравнивать два значения это <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Equality_comparisons_and_sameness#%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0_%D0%B6%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C_Object.is" target="_blank">использовать тройной знак равенства <code>===</code></a>`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -167,7 +166,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `строковое представление объекта.`,
-        desc: `Метод <code>toString()</code> возвращает строку, представляющую объект.`,
+        desc: `Метод <code>toString()</code> возвращает строку, представляющую объект. Не смотря на то что существует встроенный метод, на практике обычно используют <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
@@ -275,7 +274,7 @@ export default {
         },
         {
           name: 'getOwnPropertyNames',
-          shortDesc: `keys, even if you can't loop through them`,
+          shortDesc: `ключи, в том числе не перечисляемые`,
           desc: `Возвращает массив со всеми свойствами (независимо от того, перечисляемые они или нет), найденными непосредственно в переданном объекте. такое же извлечение ключей в объект, что и <code>Object.keys()</code>, но <code>getOwnPropertyNames()</code> будет включать не перечисляемые свойства.`,
           example: `Object.defineProperty(obj, 'a', {<br>
           <span>&nbsp;&nbsp;</span>enumerable: false<br>
