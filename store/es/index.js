@@ -6,7 +6,7 @@ export default {
         shortDesc: 'crear un nuevo objeto',
         desc: `Crea un nuevo objeto con el objeto y propiedades del prototipo especificado.<br>
           <br>
-          <strong>¡Nota importante para los principiantes! </strong> Es más común crear un objeto de la manera que se muestra en la parte superior del ejemplo, asignándolo a una variable.`,
+          <strong>¡Nota importante para los principiantes! </strong> Es más común crear un objeto de la manera que se muestra en la parte superior del ejemplo, como sigue <code>let obj = { a: 1 }; </code>.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -18,7 +18,7 @@ export default {
       {
         name: 'assign',
         shortDesc: 'realizar una copia de un objeto',
-        desc: 'Copiar los valores de todas la propiedades enumerables de uno o más objetos fuente a un objeto destino. Retorna el objeto destino.',
+        desc: 'Copiar los valores de todas la propiedades enumerables de uno o más objetos fuente a un objeto destino. Retorna el objeto destino. Aunque no es técnicamente un método de objeto incorporado, es más común cuando se usa ES6 para hacer uso de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator" target="_blank">Operador de propagación</a>, usando <code>...</code>.',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -78,7 +78,7 @@ export default {
       {
         name: 'is',
         shortDesc: 'si dos referencias apuntan al mismo objeto',
-        desc: 'Compara si dos referencias apuntan al mismo objeto. Iguala todos los valores NaN (que difiere tanto de la Comparación de igualdad abstracta como de la Comparación de igualdad estricta). Éste es un poco raro, y los documentos de los MDN son un poco engañosos.',
+        desc: 'Compara si dos referencias apuntan al mismo objeto. Iguala todos los valores NaN (que difiere tanto de la Comparación de igualdad abstracta como de la Comparación de igualdad estricta). Éste es un poco raro, y los documentos de los MDN son un poco engañosos. Esta opción es <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparations_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">más útil a utilizar triple igualdad <code>====</code></a> para las comprobaciones.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -156,7 +156,7 @@ export default {
     createString: [{
         name: 'toString',
         shortDesc: `cadena de caracteres representando al objeto`,
-        desc: `El método <code>toString()</code> devuelve una cadena de caracteres que representa el objeto.`,
+        desc: `El método <code>toString()</code> devuelve una cadena de caracteres que representa el objeto. Aunque este es el método incorporado disponible, normalmente es más útil usar <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
