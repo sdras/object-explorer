@@ -158,9 +158,11 @@ export default {
         shortDesc: `cadena de caracteres representando al objeto`,
         desc: `El método <code>toString()</code> devuelve una cadena de caracteres que representa el objeto. Aunque este es el método incorporado disponible, normalmente es más útil usar <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>.`,
         example: `console.log(obj.toString());<br>
-        console.log(obj.a.toString());`,
+        console.log(obj.a.toString());<br>
+ +      console.log(JSON.stringify(obj));`,
         output: `"[object Object]"<br>
-        "1"`
+        "1"<br>
+ +      "{"a":1,"b":2,"c":3}"`
       },
       {
         name: 'toLocaleString',
