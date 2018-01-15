@@ -109,14 +109,10 @@ export default {
         name: 'isSealed',
         shortDesc: `一個物件是否不能被修改（但屬性可以）`,
         desc: '檢查一個物件及其屬性是否被封存。',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -135,8 +131,7 @@ export default {
       {
         name: 'seal',
         shortDesc: `讓它不能添加或刪除屬性`,
-        desc:
-          '阻止刪除一個物件的屬性。現有的屬性仍然能被修改。',
+        desc: '阻止刪除一個物件的屬性。現有的屬性仍然能被修改。',
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
@@ -191,8 +186,7 @@ export default {
         {
           name: 'getOwnPropertyDescriptor',
           shortDesc: `關於屬性的詳細信息`,
-          desc:
-            '返回一個物件上已命名的屬性的屬性描述器。',
+          desc: '返回一個物件上已命名的屬性的屬性描述器。',
           example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');<br>
           <br>
           console.log(o);`,
@@ -206,8 +200,7 @@ export default {
         {
           name: 'getOwnPropertyDescriptors',
           shortDesc: `一個物件上所有屬性的詳細信息`,
-          desc:
-            '返回一個包含物件上所有屬性描述器的物件。',
+          desc: '返回一個包含物件上所有屬性描述器的物件。',
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>

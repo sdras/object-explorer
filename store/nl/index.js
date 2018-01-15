@@ -49,7 +49,8 @@ export default {
       },
       {
         name: 'defineProperties',
-        shortDesc: 'een of meerdere properties of aanpassen van bestaande properties',
+        shortDesc:
+          'een of meerdere properties of aanpassen van bestaande properties',
         desc: `Voegt een of meerdere properties, beschreven door een gegeven descriptor, toe aan een object <br>
           <br>
           <strong> Belangrijke opmerking voor beginners!</strong > Het is gebruikelijk om dot of square brackets notatie te gebruiken bij het aanmaken van een nieuwe of bij het bewerken van een bestaande property. Zoals: <code>obj.a = 1</code> of <code> obj[a] = 1</code>. Dit is technisch gezien geen ingebouwde methode, daarom staat dit ook niet beschreven.`,
@@ -83,7 +84,7 @@ export default {
         name: 'is',
         shortDesc: 'of twee referenties naar hetzelfde object wijzen',
         desc:
-          'Vergelijkt of twee referenties naar hetzelfde object wijzen. Het staat gelijk aan NaN waardes (Welke verschillen van zowel Abstract Equality Comparison en Strict Equality Comparison). Dit is een gekke, ook is de MDN documentatie een beetje misleidend.' ,
+          'Vergelijkt of twee referenties naar hetzelfde object wijzen. Het staat gelijk aan NaN waardes (Welke verschillen van zowel Abstract Equality Comparison en Strict Equality Comparison). Dit is een gekke, ook is de MDN documentatie een beetje misleidend.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -109,14 +110,10 @@ export default {
         name: 'isSealed',
         shortDesc: `of een object niet bewerkt kan worden (maar de properties wel)`,
         desc: 'Bepaald of een object of de properties zijn afgesloten.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -244,7 +241,7 @@ export default {
           name: 'hasOwnProperty',
           shortDesc: `of een property bestaat als een directe property van het object`,
           desc:
-          'Geeft een boolean terug die aangeeft of een object bestaat uit een specifieke property als een directe property van dat object en dus niet geërfd is van de overkoepelende prototype.',
+            'Geeft een boolean terug die aangeeft of een object bestaat uit een specifieke property als een directe property van dat object en dus niet geërfd is van de overkoepelende prototype.',
           example: `console.log(obj.hasOwnProperty('a'));<br>
           delete obj.a;<br>
           console.log(obj.hasOwnProperty('a'));`,

@@ -20,7 +20,7 @@ export default {
         name: 'assign',
         shortDesc: 'copiare un oggetto',
         desc:
-          'Copia i valori di tutte le proprietà enumerabili direttamente appartenenti a uno o più oggetti verso un oggetto di destinazione (il primo parametro). Restituisce l\'oggetto di destinazione.',
+          "Copia i valori di tutte le proprietà enumerabili direttamente appartenenti a uno o più oggetti verso un oggetto di destinazione (il primo parametro). Restituisce l'oggetto di destinazione.",
         example: `const copia = Object.assign({}, obj);<br>
         console.log(copia);`,
         output: `Object {<br>
@@ -72,7 +72,8 @@ export default {
       {
         name: 'isExtensible',
         shortDesc: 'possono essere aggiunte nuove proprietà',
-        desc: 'Determina se è possibile estendere l\'oggetto, ossia definirne nuove propretà.',
+        desc:
+          "Determina se è possibile estendere l'oggetto, ossia definirne nuove propretà.",
         example: `console.log(Object.isExtensible(obj));<br>
         Object.freeze(obj);<br>
         console.log(Object.isExtensible(obj));`,
@@ -83,7 +84,7 @@ export default {
         name: 'is',
         shortDesc: 'due riferimenti rappresentano lo stesso oggetto',
         desc:
-          'Determina se due riferimenti rappresentano lo stesso oggetto. Considera uguali tutti i valori <code>NaN</code> (che vengono considerati diversi sia dall\'operatore <code>==</code> che <code>===</code>). Questo è leggermente unusuale, e la documentazione su MDN è poco chiara.',
+          "Determina se due riferimenti rappresentano lo stesso oggetto. Considera uguali tutti i valori <code>NaN</code> (che vengono considerati diversi sia dall'operatore <code>==</code> che <code>===</code>). Questo è leggermente unusuale, e la documentazione su MDN è poco chiara.",
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -108,15 +109,12 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `un oggetto non può essere modificato (ma le sue proprietà si)`,
-        desc: 'Determina se non si possono aggiungere o togliere proprietà a un oggetto, e le descrizioni di quelle già esistenti non possono essere modificate.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc:
+          'Determina se non si possono aggiungere o togliere proprietà a un oggetto, e le descrizioni di quelle già esistenti non possono essere modificate.',
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -136,7 +134,7 @@ export default {
         name: 'seal',
         shortDesc: `evitare che vengano aggiunte o eliminate delle proprietà`,
         desc:
-          'Evita che altro codice aggiunga o tolga proprietà all\'oggetto specificato. Le proprietà già esistenti possono essere modificate ma non può essere modificata la loro descrizione.',
+          "Evita che altro codice aggiunga o tolga proprietà all'oggetto specificato. Le proprietà già esistenti possono essere modificate ma non può essere modificata la loro descrizione.",
         example: `Object.seal(obj);<br>
         delete obj.c;<br>
         <br>
@@ -208,7 +206,7 @@ export default {
           name: 'getOwnPropertyDescriptors',
           shortDesc: `dettagli riguardo tutte le proprietà di un oggetto`,
           desc:
-            'Restituisce un oggetto contenente le descrizioni di tutte le proprietà dell\'oggetto specificato.',
+            "Restituisce un oggetto contenente le descrizioni di tutte le proprietà dell'oggetto specificato.",
           example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
           output: `Object {<br>
           <span>&nbsp;&nbsp;</span>a: Object {<br>
@@ -235,7 +233,7 @@ export default {
           name: 'propertyIsEnumerable',
           shortDesc: `se una proprietà viene visitata con un ciclo for...in`,
           desc:
-            'Restituisce <code>true</code> o <code>false</code> per indicare se l\'attributo interno di ECMAScript <code>[[Enumerable]]</code> è imopstato a <code>true</code>. Questa funzione può essere usata per sapere se una proprietà e predefinita o no, perché solitamente le proprietà predefinite non sono enumerabili.',
+            "Restituisce <code>true</code> o <code>false</code> per indicare se l'attributo interno di ECMAScript <code>[[Enumerable]]</code> è imopstato a <code>true</code>. Questa funzione può essere usata per sapere se una proprietà e predefinita o no, perché solitamente le proprietà predefinite non sono enumerabili.",
           example: `console.log(obj.propertyIsEnumerable('a'));<br>
           console.log(Math.propertyIsEnumerable('random'));`,
           output: `true<br>

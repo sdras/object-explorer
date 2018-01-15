@@ -7,7 +7,7 @@ export default {
         shortDesc: 'create a new object',
         desc: `Creates a new object with the specified prototype object and properties.<br>
           <br>
-          <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, by assigning it to a variable.`,
+          <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, like this <code>let obj = { a: 1 };</code>`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -19,8 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: 'make a copy of an object',
-        desc:
-          'Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.',
+        desc: `Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object. Though not technically a built in object method, it's more common when using ES6 to make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, by using <code>...</code>`,
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -82,8 +81,7 @@ export default {
       {
         name: 'is',
         shortDesc: 'if two references point to the same object',
-        desc:
-          'Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading.',
+        desc: `Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading. It's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">more useful to use triple equals <code>===</code></a> to check equality`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -108,15 +106,11 @@ export default {
       {
         name: 'isSealed',
         shortDesc: `if an object can't be modified (its properties can be, though)`,
-        desc: 'Determines if an object or its properties are sealed.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        desc: `Determines if the descriptor of its properties can't be changed and new properties can't be created.`,
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
@@ -168,7 +162,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `string representation of the object.`,
-        desc: `The <code>toString()</code> method returns a string representing the object.`,
+        desc: `The <code>toString()</code> method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>

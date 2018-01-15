@@ -109,14 +109,10 @@ export default {
         name: 'isSealed',
         shortDesc: `дали обектът не може да бъде променян (свойствата могат)`,
         desc: 'Определя дали обектът или свойствата му са запечатани.',
-        example: `Object.defineProperty(obj, 'a', {<br>
-        <span>&nbsp;&nbsp;</span>configurable: false<br>
-        })<br>
+        example: `Object.seal(obj);<br>
         <br>
-        console.log(Object.isSealed(obj));<br>
-        console.log(Object.isSealed(obj.a));`,
-        output: `false<br>
-        true`
+        console.log(Object.isSealed(obj));`,
+        output: `true`
       },
       {
         name: 'isPrototypeOf',
