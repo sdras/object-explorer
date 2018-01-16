@@ -7,7 +7,7 @@ export default {
         shortDesc: 'създам нов обект',
         desc: `Създава нов обект със зададения прототип и свойства.<br>
           <br>
-          <strong>Важно за начинаещи!</strong> Създаването на обект по начина показан в началото на примера е по-често срещано - чрез присвояване към променлива.`,
+          <strong>Важно за начинаещи!</strong> Създаването на обект по начина показан в началото на примера е по-често срещано, например така: <code>let obj = { a: 1 };</code>`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -20,7 +20,7 @@ export default {
         name: 'assign',
         shortDesc: 'направя копие на обект',
         desc:
-          'Копира стойностите на всички изброени свойства на един или повече обекти към друг обект. Връща новия обект като стойност.',
+          'Копира стойностите на всички изброени свойства на един или повече обекти към друг обект. Връща новия обект като стойност. Въпреки, че чисто технически не е вътрешен метод, по-често когато се използва ES6 се среща <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a> ето така: <code>...</code>',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -83,7 +83,7 @@ export default {
         name: 'is',
         shortDesc: 'дали две референции водят към същия обект',
         desc:
-          'Проверява дали две референции водят към същия обект. Приравнява всички NaN стойности (което се отличава от Abstract Equality Comparison и Strict Equality Comparison). Това е малко странно и MDN документите са малко подвеждащи.',
+          'Проверява дали две референции водят към същия обект. Приравнява всички NaN стойности (което се отличава от Abstract Equality Comparison и Strict Equality Comparison). Това е малко странно и MDN документите са малко подвеждащи. По-полезно е да се използва <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">три пъти равно <code>===</code></a> за проверка на равенство.',
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -164,7 +164,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `обекта представен като низ`,
-        desc: `Методът <code>toString()</code> връща низ от предоставения обект.`,
+        desc: `Методът <code>toString()</code> връща низ от предоставения обект. Въпреки, че това е достъпния вътрешен метод, обикновено е по-полезно да се използва <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
