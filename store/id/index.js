@@ -20,7 +20,7 @@ export default {
         name: 'assign',
         shortDesc: 'membuat salinan dari sebuah objek',
         desc:
-          'Menyalin seluruh nilai dari seluruh properti yang <em>enumerable</em> dari satu atau lebih objek sumber ke sebuah objek target. Metode ini akan mengembalikan objek target.',
+          'Menyalin seluruh nilai dari seluruh properti yang <em>enumerable</em> dari satu atau lebih objek sumber ke sebuah objek target. Metode ini akan mengembalikan objek target. Meskipun metode ini bukanlah metode objek yang built-in, biasanya pada ES6 lebih umum untuk menggunakan <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, dengan <code>...</code>',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
