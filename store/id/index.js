@@ -83,7 +83,7 @@ export default {
         name: 'is',
         shortDesc: 'apakah dua titik referensi menunjuk ke objek yang sama',
         desc:
-          'Membandingkan apakah dua titik referensi menunjuk ke objek yang sama. Seluruh nilai NaN akan dianggap sama (di mana hal ini berbeda dari Abstract Equality Comparison dan Strict Equality Comparison). Metode ini agak sedikit aneh, dan dokumentasi MDN yang terkait agak sedikit menyesatkan.',
+          `Membandingkan apakah dua titik referensi menunjuk ke objek yang sama. Seluruh nilai NaN akan dianggap sama (di mana hal ini berbeda dari Abstract Equality Comparison dan Strict Equality Comparison). Metode ini agak sedikit aneh, dan dokumentasi MDN yang terkait agak sedikit menyesatkan. Sebaiknya, gunakanlah <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">triple equals <code>===</code></a> untuk mengecek kesetaraan.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
