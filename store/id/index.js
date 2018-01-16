@@ -7,7 +7,7 @@ export default {
         shortDesc: 'membuat sebuah objek baru',
         desc: `Membuat sebuah objek baru dengan objek prototipe dan properti yang ditentukan.<br>
           <br>
-          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum untuk membuat objek adalah dengan cara yang ditunjukkan pada bagian atas dari contoh, yaitu menetapkannya pada sebuah variabel.`,
+          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum untuk membuat objek adalah dengan cara yang ditunjukkan pada bagian atas dari contoh, seperti ini <code>let obj = { a: 1 };</code>.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -20,7 +20,7 @@ export default {
         name: 'assign',
         shortDesc: 'membuat salinan dari sebuah objek',
         desc:
-          'Menyalin seluruh nilai dari seluruh properti yang <em>enumerable</em> dari satu atau lebih objek sumber ke sebuah objek target. Metode ini akan mengembalikan objek target.',
+          'Menyalin seluruh nilai dari seluruh properti yang <em>enumerable</em> dari satu atau lebih objek sumber ke sebuah objek target. Metode ini akan mengembalikan objek target. Meskipun metode ini bukanlah metode objek yang built-in, biasanya pada ES6 lebih umum untuk menggunakan <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, dengan <code>...</code>',
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -86,7 +86,7 @@ export default {
         name: 'is',
         shortDesc: 'apakah dua titik referensi menunjuk ke objek yang sama',
         desc:
-          'Membandingkan apakah dua titik referensi menunjuk ke objek yang sama. Seluruh nilai NaN akan dianggap sama (di mana hal ini berbeda dari Abstract Equality Comparison dan Strict Equality Comparison). Metode ini agak sedikit aneh, dan dokumentasi MDN yang terkait agak sedikit menyesatkan.',
+          `Membandingkan apakah dua titik referensi menunjuk ke objek yang sama. Seluruh nilai NaN akan dianggap sama (di mana hal ini berbeda dari Abstract Equality Comparison dan Strict Equality Comparison). Metode ini agak sedikit aneh, dan dokumentasi MDN yang terkait agak sedikit menyesatkan. Sebaiknya, gunakanlah <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">triple equals <code>===</code></a> untuk mengecek kesetaraan.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -169,7 +169,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `representasi string dari sebuah objek`,
-        desc: `Metode <code>toString()</code> mengembalikan sebuah string yang merepresentasikan objek tersebut.`,
+        desc: `Metode <code>toString()</code> mengembalikan sebuah string yang merepresentasikan objek tersebut. Meskipun metode ini adalah metode built-in yang tersedia, biasanya akan lebih berguna apabila Anda menggunakan <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
