@@ -168,7 +168,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `representasi string dari sebuah objek`,
-        desc: `Metode <code>toString()</code> mengembalikan sebuah string yang merepresentasikan objek tersebut.`,
+        desc: `Metode <code>toString()</code> mengembalikan sebuah string yang merepresentasikan objek tersebut. Meskipun metode ini adalah metode built-in yang tersedia, biasanya akan lebih berguna apabila Anda menggunakan <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
