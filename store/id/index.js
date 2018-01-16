@@ -7,7 +7,7 @@ export default {
         shortDesc: 'membuat sebuah objek baru',
         desc: `Membuat sebuah objek baru dengan objek prototipe dan properti yang ditentukan.<br>
           <br>
-          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum untuk membuat objek adalah dengan cara yang ditunjukkan pada bagian atas dari contoh, yaitu menetapkannya pada sebuah variabel.`,
+          <strong>Catatan penting untuk para pemula!</strong> Cara yang lebih umum untuk membuat objek adalah dengan cara yang ditunjukkan pada bagian atas dari contoh, seperti ini <code>let obj = { a: 1 };</code>.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
