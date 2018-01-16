@@ -160,8 +160,7 @@ export default {
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
-        "1"<br>
- +      "{"a":1,"b":2,"c":3}"`
+        "1"`
       },
       {
         name: 'toLocaleString',
