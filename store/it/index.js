@@ -7,7 +7,7 @@ export default {
         shortDesc: 'creare un nuovo oggetto',
         desc: `Crea un nuovo oggetto a partire dal prototipo e dalle proprietà specificate.<br>
           <br>
-          <strong>Nota per i principianti!</strong> Solitamente gli oggetti si creano com'è mostrato all'inizio dell'esempio, utilizzando le parentesi graffe.`,
+          <strong>Nota per i principianti!</strong> Solitamente gli oggetti si creano com'è mostrato all'inizio dell'esempio, così: <code>let obj = { a: 1 };</code>.`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -20,7 +20,8 @@ export default {
         name: 'assign',
         shortDesc: 'copiare un oggetto',
         desc:
-          "Copia i valori di tutte le proprietà enumerabili direttamente appartenenti a uno o più oggetti verso un oggetto di destinazione (il primo parametro). Restituisce l'oggetto di destinazione.",
+          `Copia i valori di tutte le proprietà enumerabili direttamente appartenenti a uno o più oggetti verso un oggetto di destinazione (il primo parametro). Restituisce l'oggetto di destinazione.<br>
+          Anche se tecnicamente non è una funzione degli oggetti, quando si usa ES6 è più comune usare lo <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, con l'operatore <code>...</code>.`,
         example: `const copia = Object.assign({}, obj);<br>
         console.log(copia);`,
         output: `Object {<br>
@@ -84,7 +85,7 @@ export default {
         name: 'is',
         shortDesc: 'due riferimenti rappresentano lo stesso oggetto',
         desc:
-          "Determina se due riferimenti rappresentano lo stesso oggetto. Considera uguali tutti i valori <code>NaN</code> (che vengono considerati diversi sia dall'operatore <code>==</code> che <code>===</code>). Questo è leggermente unusuale, e la documentazione su MDN è poco chiara.",
+          `Determina se due riferimenti rappresentano lo stesso oggetto. Considera uguali tutti i valori <code>NaN</code> (che vengono considerati diversi sia dall'operatore <code>==</code> che <code>===</code>). Questo è leggermente unusuale, e la documentazione su MDN è poco chiara. &Egrave; più comodo utilizzare <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">tre uguali <code>===</code></a> per controllare l'ugualianza tra oggetti.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -166,7 +167,8 @@ export default {
       {
         name: 'toString',
         shortDesc: `una stringa che rappresenti l'oggetto.`,
-        desc: `La funzione <code>toString()</code> restiuisce una stringa che rappresenta l'oggetto.`,
+        desc: `La funzione <code>toString()</code> restiuisce una stringa che rappresenta l'oggetto.<br>
+          Anche se questo è il metodo specifico di <code>Object</code>, è più utile usare <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
