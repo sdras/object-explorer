@@ -7,7 +7,7 @@ export default {
         shortDesc: '建立一個新的物件',
         desc: `建立一個帶有指定原型和屬性的新物件。<br>
           <br>
-          <strong>初學者請注意！</strong> 一般來說建立一個物件就像上方例子那樣直接賦予變數一個值。`,
+          <strong>初學者請注意！</strong> 一般來說建立一個物件就像上方例子那樣直接賦予變數一個值 <code>let obj = { a: 1 };</code>。`,
         example: `const obj2 = Object.create(obj);<br>
         console.log(obj2);`,
         output: `Object {<br>
@@ -19,8 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: '建立一個物件複本',
-        desc:
-          '複製一個或多個物件自身所有可數的屬性到另一個目標物件。回傳的值為該目標物件。',
+        desc: `複製一個或多個物件自身所有可數的屬性到另一個目標物件。回傳的值為該目標物件。縱使在技術層面這不是一個物件的內置方法，當使用 ES6 時常見的做法是利用 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">展開運算子</a> <code>...</code>`,
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -82,8 +81,7 @@ export default {
       {
         name: 'is',
         shortDesc: '兩個引用是否指向同一物件',
-        desc:
-          '對比兩個引用是否指向同一物件。NaN 與 NaN 比較會返回 true (與抽像相等比較和嚴格相等比較不同)（譯者註：「抽像相等比較」就是將型別一致化後比較，即“==”；「嚴格相等比較」則會比較兩個值和型別，即“===”）。這個有點奇怪，MDN 文檔有點誤導。',
+        desc: `對比兩個引用是否指向同一物件。NaN 與 NaN 比較會返回 true (與抽像相等比較和嚴格相等比較不同)（譯者註：「抽像相等比較」就是將型別一致化後比較，即“==”；「嚴格相等比較」則會比較兩個值和型別，即“===”）。這個有點奇怪，MDN 文檔有點誤導。使用<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">三個等號 <code>===</code></a> 來比較物件是否相同會更有效。`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -163,7 +161,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `表示這個物件的字符串`,
-        desc: `<code>toString()</code> 方法返回表示這個物件的字符串。`,
+        desc: `<code>toString()</code> 方法返回表示這個物件的字符串。縱使這是一個內置的方法，更有效的方法是 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
