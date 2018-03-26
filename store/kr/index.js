@@ -19,7 +19,7 @@ export default {
       {
         name: 'assign',
         shortDesc: '객체의 복사본 만들기',
-        desc: `한가지 이상의 원본 객체에서 대상 객체로 열거할 수 있는 모든 프로퍼티 값을 복사합니다. 기술적으로 객체 메서드에 내장된 것은 아니지만 ES6를 사용하는 경우 <code>...</code>을 사용하여 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">전개 연산자</a>를 활용하는 것이 더 일반적입니다.`,
+        desc: `한가지 이상의 원본 객체에서 대상 객체로 열거할 수 있는 모든 프로퍼티 값을 복사합니다. 기술적으로 객체 메서드에 내장된 것은 아니지만 ES6를 사용하는 경우 <code>...</code>을 사용하여 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">전개 연산자</a>를 활용하는 것이 더 일반적입니다.`,
         example: `const copy = Object.assign({}, obj);<br>
         console.log(copy);`,
         output: `Object {<br>
@@ -81,7 +81,7 @@ export default {
       {
         name: 'is',
         shortDesc: '두 개의 참조가 같은 객체를 가리키는 경우',
-        desc: `두 참조가 동일한 객체를 가리키는지를 비교합니다. 모든 NaN 값과 같습니다. (추상적 같음 비교와 엄격한 같음 비교 둘 다와는 다르다) 이건 좀 이상하지만 MDN 문서에 오해의 소지가 있습니다. 같음을 확인하기 위해 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">엄격한 같음 <code>===</code>를 사용하는 것이 더 유용합니다</a>.`,
+        desc: `두 참조가 동일한 객체를 가리키는지를 비교합니다. 모든 NaN 값과 같습니다. (추상적 같음 비교와 엄격한 같음 비교 둘 다와는 다르다) 이건 좀 이상하지만 MDN 문서에 오해의 소지가 있습니다. 같음을 확인하기 위해 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">엄격한 같음 <code>===</code>를 사용하는 것이 더 유용합니다</a>.`,
         example: `let obj2 = {<br>
         <span>&nbsp;&nbsp;</span>a: 1,<br>
         <span>&nbsp;&nbsp;</span>b: 2,<br>
@@ -162,7 +162,7 @@ export default {
       {
         name: 'toString',
         shortDesc: `객체의 문자열 표현`,
-        desc: `<code>toString()</code> 메서드는 객체를 나타내는 문자열을 반환합니다. 내장 메서드이지만 일반적으로 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>를 사용하는 것이 더 유용합니다.`,
+        desc: `<code>toString()</code> 메서드는 객체를 나타내는 문자열을 반환합니다. 내장 메서드이지만 일반적으로 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>를 사용하는 것이 더 유용합니다.`,
         example: `console.log(obj.toString());<br>
         console.log(obj.a.toString());`,
         output: `"[object Object]"<br>
