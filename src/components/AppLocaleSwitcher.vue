@@ -1,8 +1,8 @@
 <template>
   <div class="localization-dropdown">
-    <a href="https://sdras.github.io/array-explorer/"><em>Array Explorer</em></a>
+    <a href="https://devJang.github.io/array-explorer/"><em>배열 탐색기</em></a>
     <br>
-    Language:
+    언어:
     <select v-model="selectedLanguage">
       <option v-for="(val, key) in languages" :value="key">{{val.long}}</option>
     </select>

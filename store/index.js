@@ -16,6 +16,7 @@ import zh_cn from './zh_cn/index'
 import zh_hk from './zh_hk/index'
 import fr from './fr/index'
 import id from './id/index'
+import kr from './kr/index'
 
 // import translations of labels
 import translationsDe from '../src/locale/de/index'
@@ -31,6 +32,7 @@ import translationsZhCn from '../src/locale/zh_cn/index'
 import translationsZhHk from '../src/locale/zh_hk/index'
 import translationsFr from '../src/locale/fr/index'
 import translationsId from '../src/locale/id/index'
+import translationsKr from '../src/locale/kr/index'
 
 // create info about languages
 const languages = (ctx => {
@@ -80,11 +82,12 @@ export const store = new Vuex.Store({
     fr,
     id,
     zh_hk,
-    fr
+    fr,
+    kr
   },
   state: {
     selectedMethod: undefined,
-    curLanguage: 'en',
+    curLanguage: 'kr',
     languages
   },
   mutations
@@ -106,6 +109,7 @@ Vue.i18n.add('zh_cn', translationsZhCn)
 Vue.i18n.add('zh_hk', translationsZhHk)
 Vue.i18n.add('fr', translationsFr)
 Vue.i18n.add('id', translationsId)
+Vue.i18n.add('kr', translationsKr)
 
 Vue.i18n.set(store.state.curLanguage)
 
