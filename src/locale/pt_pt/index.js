@@ -1,5 +1,5 @@
 export default {
-  firstMethod: 'Eu tenho um objecto e gostaria de',
+  firstMethod: 'Eu tenho um objeto e gostava de',
   infoPropMethod: 'Preciso de obter',
   methodOptions: 'Preciso de',
   methodTypes: {
@@ -11,15 +11,15 @@ export default {
     // string: 'string'
   },
   docsLink: 'Ver Documentação',
-  details: 'detalhes sobre a propriadade',
+  details: 'detalhes sobre a propriedade',
   list: 'a lista de todas as keys e/ou valores',
   primaryOptions: [
-    'criar um objecto',
-    'criar propriadades',
-    'receber informações sobre um objecto',
-    'receber informações sobre as propriadades',
-    'restringir mudanças a um objecto',
-    'criar texto aparatir de um objecto',
+    'criar um objeto',
+    'criar propriedades',
+    'receber informações sobre um objeto',
+    'receber informações sobre as propriedades',
+    'restringir mudanças a um objeto',
+    'criar texto a partir de um objeto',
     'gerir protótipos'
   ]
   // other text can be added here

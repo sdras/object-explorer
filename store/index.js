@@ -79,7 +79,6 @@ export const store = new Vuex.Store({
     ru,
     pt_pt,
     zh_cn,
-    fr,
     id,
     zh_hk,
     fr,
@@ -104,7 +103,7 @@ Vue.i18n.add('es', translationsEs)
 Vue.i18n.add('it', translationsIt)
 Vue.i18n.add('nl', translationsNl)
 Vue.i18n.add('ru', translationsRU)
-Vue.i18n.add('pt-pt', translationsPtPt)
+Vue.i18n.add('pt_pt', translationsPtPt)
 Vue.i18n.add('zh_cn', translationsZhCn)
 Vue.i18n.add('zh_hk', translationsZhHk)
 Vue.i18n.add('fr', translationsFr)
