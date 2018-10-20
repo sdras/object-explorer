@@ -1,5 +1,5 @@
 export default {
-  firstMethod: 'Maám objekt a chci',
+  firstMethod: 'Mám objekt a chci',
   infoPropMethod: 'Potřebuji získat',
   methodOptions: 'Potřebuji',
   methodTypes: {
