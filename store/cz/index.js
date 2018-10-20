@@ -173,7 +173,7 @@ export default {
       },
       {
         name: 'toLocaleString',
-        shortDesc: `localizovaný řetězec reprezentující objekt.`,
+        shortDesc: `lokalizovaný řetězec reprezentující objekt.`,
         desc: `<code>toLocaleString()</code> metoda vrací řetězec reprezentující objekt. Tato metoda je navržena tak, aby byla přepsána pro místní potřeby. Lidská verze: pokud máte něco, co má jiná data v závislosti na poloze, např. metody pro datum, tak to vrací jiný formát pro datumy podle místa.`,
         example: `obj.d = new Date();<br>
         <br>
@@ -298,7 +298,7 @@ export default {
       {
         name: 'setPrototypeOf',
         shortDesc: `nastavit prototyp objektu.`,
-        desc: `Varování: Tato metoda je velmi pomalá. Používej tuto opatrně metodu nebo se jí vyhni přes <code>Object.create()</code>. Nastaví prototyp, hodnotu interní vlastnosti [[Prototype]].`,
+        desc: `Varování: Tato metoda je velmi pomalá. Používej tuto metodu opatrně nebo se jí vyhni přes <code>Object.create()</code>. Nastaví prototyp, hodnotu interní vlastnosti [[Prototype]].`,
         example: `const dict = Object.setPrototypeOf({}, obj);<br>
         <br>
         console.log(dict);`,
