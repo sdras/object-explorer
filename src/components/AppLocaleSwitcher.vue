@@ -1,10 +1,11 @@
 <template>
   <div class="localization-dropdown">
-    <a href="https://sdras.github.io/array-explorer/"><em>Array Explorer</em></a>
-    <br>
-    Language:
+    <a href="https://arrayexplorer.netlify.com">
+      <em>Array Explorer</em>
+    </a>
+    <br />Language:
     <select v-model="selectedLanguage">
-      <option v-for="(val, key) in languages" :value="key">{{val.long}}</option>
+      <option v-for="(val, key) in languages" :key="key" :value="key">{{val.long}}</option>
     </select>
   </div>
 </template>
@@ -15,15 +16,15 @@ export default {
     return {
       selectedLanguage: this.$store.state.curLanguage,
       languages: this.$store.state.languages
-    }
+    };
   },
   watch: {
     selectedLanguage(newLang) {
-      this.$store.commit('changeLanguage', newLang)
-      this.$store.commit('resetSelection')
+      this.$store.commit("changeLanguage", newLang);
+      this.$store.commit("resetSelection");
     }
   }
-}
+};
 </script>
 
 <style scoped>

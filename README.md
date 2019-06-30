@@ -14,7 +14,7 @@ I based most of the longer descriptions off of the MDN documentation, altering i
 
 ## Other Similar Projects
 
-**I have an Array Explorer as well: [https://sdras.github.io/array-explorer/](https://sdras.github.io/array-explorer/)**
+**I have an Array Explorer as well: [https://arrayexplorer.netlify.com](https://arrayexplorer.netlify.com)**
 
 ## Build Setup
 
