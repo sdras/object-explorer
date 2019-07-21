@@ -1,5 +1,9 @@
 # Object Explorer
 
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+</a>
+
 When I was first learning object methods, I spent a lot of time digging through the docs to find the appropriate one, and I had to search one by one. I made this resource to help people find the correct object method a bit more naturally. You can narrow down what you want to do and explore until you find what's most useful to you.
 
 Check out the site here: [https://objectexplorer.netlify.com/](https://objectexplorer.netlify.com/)
