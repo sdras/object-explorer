@@ -15,8 +15,8 @@ export default {
   primaryOptions: [
       'crear un objeto',
       'crear propiedades',
-      'obtener informacio de los objetos',
-      'obtener informacion de las propiedades',
+      'obtener información de los objetos',
+      'obtener información de las propiedades',
       'restringir cambios en un objeto',
       'crear una cadena desde un objeto',
       'manejar prototipos'
