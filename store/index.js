@@ -6,6 +6,7 @@ import vuexI18n from 'vuex-i18n'
 import de from './de/index'
 import en from './en/index'
 import bg from './bg/index'
+import bn from './bn/index'
 import cz from './cz/index'
 import es from './es/index'
 import it from './it/index'
@@ -22,6 +23,7 @@ import el from './el/index'
 import translationsDe from '../src/locale/de/index'
 import translationsEn from '../src/locale/en/index'
 import translationsBg from '../src/locale/bg/index'
+import translationsBn from '../src/locale/bg/index'
 import translationsCz from '../src/locale/cz/index'
 import translationsEs from '../src/locale/es/index'
 import translationsIt from '../src/locale/it/index'
@@ -71,6 +73,7 @@ export const store = new Vuex.Store({
   modules: {
     en,
     bg,
+    bn,
     cz,
     de,
     es,
@@ -96,6 +99,7 @@ Vue.use(vuexI18n.plugin, store)
 
 // add translations directly to the application
 Vue.i18n.add('bg', translationsBg)
+Vue.i18n.add('bn', translationsBn)
 Vue.i18n.add('de', translationsDe)
 Vue.i18n.add('en', translationsEn)
 Vue.i18n.add('cz', translationsCz)
