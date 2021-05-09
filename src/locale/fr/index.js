@@ -7,14 +7,14 @@ export default {
     determine: "déterminer",
     'return a': "obtenir",
     'find out': "trouver",
-    'get an array of all of the': "obtenir un array de tous/toutes les"
+    'get an array of all of the': "obtenir un tableau de tous/toutes les"
     // string: 'string'
   },
   details: "des détails sur la propriété",
   list: "une liste de toutes les propriétés et/ou valeurs",
   primaryOptions: [
     "créer un objet",
-    "créer des propritétés",
+    "créer des propriétés",
     "obtenir des informations sur un objet",
     "obtenir des informations sur les propriétés",
     "restreindre les modifications sur un objet",
