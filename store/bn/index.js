@@ -4,7 +4,7 @@ export default {
     createObj: [
       {
         name: 'create',
-        shortDesc: 'নতুন একটা অবজেক্ট তৈরি করা',
+        shortDesc: 'নতুন একটা অবজেক্ট তৈরি করতে',
         desc: `উল্লেখিত prototype অবজেক্টের সাহায্যে, উল্লেখিত properties সহ নতুন একটা অবজেক্ট তৈরি করে<br>
           <br>
           <strong>নতুনদের জন্য গুরুত্বপূর্ণ তথ্য!</strong> সাধারণতঃ এখানে দেখানো উদাহরণের চাইতে সহজভাবে নতুন অবজেক্ট তৈরি করা হয়, এভাবে <code>let obj = { a: 1 };</code>`,
@@ -18,7 +18,7 @@ export default {
       },
       {
         name: 'assign',
-        shortDesc: 'একটা অবজেক্টের একটা কপি তৈরি করা',
+        shortDesc: 'একটি অবজেক্টের কপি তৈরি করতে',
         desc:
           `এক বা একাধিক অবজেক্ট থেকে সবগুলো enumerable properties নিয়ে একটি টার্গেট অবজেক্টে কপি করে। এই method টি সবগুলো properties সহ নতুন অবজেক্টটিকে return করে। তবে ES6 ব্যবহার করার সময় সাধারণতঃ <code>...</code> এর মাধ্যমে <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a> ব্যবহার করাটাই বেশি প্রচলিত, যদিও এটা অবজেক্টের কোনও built-in method নয় ।`,
         example: `const copy = Object.assign({}, obj);<br>
