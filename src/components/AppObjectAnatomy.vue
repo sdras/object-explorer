@@ -1,14 +1,13 @@
 <template>
   <div class="more-info-contain">
     <svg 
-      @mouseenter="show = !show" 
-      @mouseleave="show = !show"
+      @mousedown="show = !show"
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 6.827 6.827" 
       width="60" height="60"
       aria-labelledby="skeletonicon"
       role="presentation">
-      <title id="skeletonicon" lang="en">skeleton icon</title>
+      <title id="skeletonicon" lang="en">Click to toggle skeleton icon</title>
       <g class="skeleton">
         <rect x="0" y="0" width="6.8" height="6.8" fill="rgba(255, 255, 255, 0)"/>
         <path d="M.907.853h5.066v5.12H.853V.853h.054zm4.96.107H.96v4.907h4.907V.96z" class="fil0"/>
